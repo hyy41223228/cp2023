@@ -1,46 +1,3 @@
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">// 包含標準輸出入程式庫的標頭文件
-// https://blog.csdn.net/weixin_38468077/article/details/101069365
-// http://www.gnuplot.info/demo/
-// https://github.com/sysprog21/rv32emu
-// https://github.com/sysprog21/semu 
-// https://docs.google.com/presentation/d/14N0cWG2SnBSqhc2cLF0_2VerB9FF8JN3
-// https://cs61c.org/fa23/
-// https://greenteapress.com/wp/think-python-2e/
-// https://github.com/ecalvadi/c99-examples
-// https://github.com/gouravthakur39/beginners-C-program-examples
-// https://github.com/ergenekonyigit/Numerical-Analysis-Examples
-// https://www.che.ncku.edu.tw/facultyweb/changct/html/teaching/CPPandMATLAB/Past/pdf%20Files/Chap02-Ling.pdf
-// https://gteceducation.com.sg/Brochures/PROGRAMMING/C%20PROGRAMMING%20FULL.pdf
-// https://jsommers.github.io/cbook/cbook.pdf
-// https://jsommers.github.io/cbook/index.html
-// http://student.itee.uq.edu.au/courses/csse2310/CProgrammingNotes.pdf
-// http://cslibrary.stanford.edu/101/EssentialC.pdf
-// https://publications.gbdirect.co.uk/c_book/
-// https://www.fossil-scm.org/fossil-book/doc/2ndEdition/fossilbook.pdf
-// ***** execute on replit 
-// cd downloads
-// cc gnuplot_ex1.c -o gnuplot_ex1
-// ./gnuplot_ex1
-#include &lt;stdio.h&gt;
-  
-// 主函式
-int main() {
-    // Start a Gnuplot process using popen
-    FILE *gnuplotPipe = popen("gnuplot -persistent", "w");
-    if (!gnuplotPipe) {
-        fprintf(stderr, "Failed to start Gnuplot.\n");
-        return 1;
-    }
-  
-    // Use Gnuplot plotting commands, specify font and output as PNG
-    fprintf(gnuplotPipe, "set terminal png font 'default,10' size 800,400\n");
-    fprintf(gnuplotPipe, "set output './../images/gnuplot_ex1.png'\n");
-    fprintf(gnuplotPipe, "plot sin(x)");
-    // Close popen
-    pclose(gnuplotPipe);
-  
-    return 0;
-}</pre>
 <h1>First</h1>
 <p><br/><br/>About</p>
 <p></p>
@@ -90,7 +47,7 @@ int main() {
     return 0;
 }</pre>
 <p><br/><img alt="" height="200" src="/images/gnuplot_ex1.png" width="400"/></p>
-<h1> 6w</h1>
+<h1>6w</h1>
 <p>#include &lt;stdio.h&gt;<br/>#include &lt;gd.h&gt;<br/>#include &lt;math.h&gt;</p>
 <p>void draw_roc_flag(gdImagePtr img);<br/>void draw_white_sun(gdImagePtr img, int center_x, int center_y, int sun_radius, int white, int red, int blue);</p>
 <p>int main() {<br/> // width 3: height 2<br/> int width = 1200;<br/> int height = (int)(width*2.0 / 3.0);</p>
@@ -521,8 +478,97 @@ int main() {
  
     return 0;
 }</pre>
-<img alt="" height="200" src="/images/motion_plot.png" width="400"/>
-<h1>Brython</h1>
+<p><img alt="" height="200" src="/images/motion_plot.png" width="400"/></p>
+<h1>ANSIC</h1>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main(int argc, char** argv) {
+    // 检查C标准版本
+    #if __STDC_VERSION__ &gt;=  201710L
+        printf("我们正在使用 C18 标准!\n");
+    #elif __STDC_VERSION__ &gt;= 201112L
+        printf("我们正在使用 C11 标准!\n");
+    #elif __STDC_VERSION__ &gt;= 199901L
+        printf("我们正在使用 C99 标准!\n");
+    #else
+        printf("我们正在使用 C89/C90 标准!\n");
+    #endif
+
+    // 表示程序成功执行
+    return 0;
+}
+</pre>
+<p><img alt="" height="122" src="/images/螢幕擷取畫面 2023-12-20 191959.png" width="200"/><br/><br/></p>
+<p>#include &lt;stdio.h&gt;</p>
+<p>int main(int argc, char** argv) {<br/> // 检查C标准版本<br/> #if __STDC_VERSION__ &gt;= 201710L<br/> printf("我们正在使用 C18 标准!\n");<br/> #elif __STDC_VERSION__ &gt;= 201112L<br/> printf("我们正在使用 C11 标准!\n");<br/> #elif __STDC_VERSION__ &gt;= 199901L<br/> printf("我们正在使用 C99 标准!\n");<br/> #else<br/> printf("我们正在使用 C89/C90 标准!\n");<br/> #endif</p>
+<p>// 表示程序成功执行<br/> return 0;<br/>}</p>
+<p><img alt="" height="65" src="/images/螢幕擷取畫面 2023-12-20 192136.png" width="200"/></p>
+<p></p>
+<p> #include &lt;stdio.h&gt;</p>
+<p>int main() <br/>{<br/> // 打印一行井号<br/> printf("######\n");</p>
+<p>// 打印一个井号<br/> printf("#\n");</p>
+<p>// 打印一个井号<br/> printf("#\n");</p>
+<p>// 打印一行井号<br/> printf("#####\n");</p>
+<p>// 打印一个井号<br/> printf("#\n");</p>
+<p>// 打印一个井号<br/> printf("#\n");</p>
+<p>// 打印一个井号<br/> printf("#\n");</p>
+<p>return 0;<br/>}</p>
+<p><img alt="" height="130" src="/images/螢幕擷取畫面 2023-12-20 192728.png" width="200"/></p>
+<p></p>
+<p>#include &lt;stdio.h&gt;</p>
+<p>int main() <br/>{<br/> // 声明并初始化字符变量<br/> char char1 = 'X';<br/> char char2 = 'M';<br/> char char3 = 'L';</p>
+<p>// 打印原始和反转顺序的字符<br/> printf("%c%c%c的反转是%c%c%c\n",<br/> char1, char2, char3,<br/> char3, char2, char1);</p>
+<p>return 0;<br/>}</p>
+<p><img alt="" height="44" src="/images/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202023-12-20%20192906.png" width="200"/></p>
+<p></p>
+<p>#include &lt;stdio.h&gt;</p>
+<p>/* <br/> 用于存储矩形宽度和高度的变量（单位：英寸）<br/>*/<br/>int width; <br/>int height;</p>
+<p>int area; /* 用于存储矩形的面积的变量 */<br/>int perimeter; /* 用于存储矩形的周长的变量 */</p>
+<p>int main() {<br/> /* 给高度和宽度赋值 */<br/> height = 7;<br/> width = 5;</p>
+<p>/* 计算矩形的周长 */<br/> perimeter = 2 * (height + width);<br/> printf("矩形的周长 = %d 英寸\n", perimeter);</p>
+<p>/* 计算矩形的面积 */<br/> area = height * width;<br/> printf("矩形的面积 = %d 平方英寸\n", area);</p>
+<p>return 0;<br/>}</p>
+<p><img alt="" height="53" src="/images/螢幕擷取畫面 2023-12-20 193144.png" width="200"/></p>
+<p></p>
+<p>#include &lt;stdio.h&gt;</p>
+<p>int main() {<br/> int radius; /* 用于存储圆的半径的变量 */<br/> float area, perimeter; /* 用于存储圆的面积和周长的变量 */ <br/> radius = 6; /* 为半径赋值 */</p>
+<p>/* 计算圆的周长 */<br/> perimeter = 2 * 3.14 * radius;<br/> printf("圆的周长 = %f 英寸\n", perimeter);</p>
+<p>/* 计算圆的面积 */<br/> area = 3.14 * radius * radius;<br/> printf("圆的面积 = %f 平方英寸\n", area);</p>
+<p>return 0;<br/>}</p>
+<p><img alt="" height="45" src="/images/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202023-12-20%20193435.png" width="200"/></p>
+<p></p>
+<p>#include &lt;stdio.h&gt;</p>
+<p>int main()<br/>{<br/> int a = 125, b = 12345; /* 声明并初始化整数变量 */<br/> long ax = 1234567890; /* 声明并初始化长整数变量 */<br/> short s = 4043; /* 声明并初始化短整数变量 */<br/> float x = 2.13459; /* 声明并初始化浮点数变量 */<br/> double dx = 1.1415927; /* 声明并初始化双精度浮点数变量 */<br/> char c = 'W'; /* 声明并初始化字符变量 */<br/> unsigned long ux = 2541567890; /* 声明并初始化无符号长整数变量 */</p>
+<p>/* 不同的算术运算和类型转换 */<br/> printf("a + c = %d\n", a + c);<br/> printf("x + c = %f\n", x + c);<br/> printf("dx + x = %f\n", dx + x);<br/> printf("((int) dx) + ax = %ld\n", ((int) dx) + ax);<br/> printf("a + x = %f\n", a + x);<br/> printf("s + b = %d\n", s + b);<br/> printf("ax + b = %ld\n", ax + b);<br/> printf("s + c = %hd\n", s + c);<br/> printf("ax + c = %ld\n", ax + c);<br/> printf("ax + ux = %lu\n", ax + ux);</p>
+<p>return 0;<br/>}</p>
+<p><img alt="" height="157" src="/images/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202023-12-20%20193651.png" width="200"/></p>
+<p></p>
+<p>#include &lt;stdio.h&gt;</p>
+<p>int main()<br/>{<br/> int days, years, weeks;</p>
+<p>days = 1329; // 总天数</p>
+<p>// 将天数转换为年、周和天<br/> years = days / 365; // 计算年<br/> weeks = (days % 365) / 7; // 计算周<br/> days = days - ((years * 365) + (weeks * 7)); // 计算剩余天数</p>
+<p>// 打印结果<br/> printf("年: %d\n", years);<br/> printf("周: %d\n", weeks);<br/> printf("天: %d \n", days);</p>
+<p>return 0;<br/>}</p>
+<p><img alt="" height="90" src="/images/螢幕擷取畫面 2023-12-21 005615.png" width="200"/></p>
+<p></p>
+<p>#include &lt;stdio.h&gt;</p>
+<p>int main() <br/>{<br/> int x, y, sum; // 声明变量，用于存储两个整数及它们的和</p>
+<p>// 提示用户输入，并将其存储在 'x' 中<br/> printf("\n输入第一个整数："); <br/> scanf("%d", &amp;x);</p>
+<p>// 提示用户输入，并将其存储在 'y' 中<br/> printf("\n输入第二个整数：");<br/> scanf("%d", &amp;y);</p>
+<p>sum = x + y; // 计算 'x' 和 'y' 的和</p>
+<p>// 打印和<br/> printf("\n上述两个整数的和 = %d\n", sum);</p>
+<p>return 0; // 表示程序成功执行<br/>}</p>
+<p><img alt="" height="76" src="/images/螢幕擷取畫面 2023-12-21 033217.png" width="200"/></p>
+<p> </p>
+<p>#include &lt;stdio.h&gt;</p>
+<p>int main() <br/>{<br/> int x, y, result; // 声明变量，用于存储两个整数及它们的乘积</p>
+<p>// 提示用户输入，并将其存储在 'x' 中<br/> printf("\n输入第一个整数："); <br/> scanf("%d", &amp;x);</p>
+<p>// 提示用户输入，并将其存储在 'y' 中<br/> printf("\n输入第二个整数：");<br/> scanf("%d", &amp;y);</p>
+<p>result = x * y; // 计算 'x' 和 'y' 的乘积</p>
+<p>// 打印乘积<br/> printf("上述两个整数的乘积 = %d\n", result);</p>
+<p>return 0; // 表示程序成功执行<br/>}</p>
+<p><img alt="" height="80" src="/images/螢幕擷取畫面 2023-12-21 033530.png" width="200"/></p>
+<p><span class="hljs-meta"></span></p><h1>Brython</h1>
 <p><a href="https://en.wikipedia.org/wiki/Python_(programming_language)">https://en.wikipedia.org/wiki/Python_(programming_language)</a></p>
 <h4>Examples:</h4>
 <p style="padding-left: 30px;"><a href="https://gist.github.com/mdecycu/d9082d678096bd58378d6afe2c7fa05d">https://gist.github.com/mdecycu/d9082d678096bd58378d6afe2c7fa05d</a></p>
