@@ -143,35 +143,39 @@ img.add_border {
           
         </header>
     <div id="tipue_search_content">6w << <a href='6w.html'>Previous</a> <a href='W12.html'>Next</a> >> W12<br /><h1>C_EX</h1>
+<p>1. </p>
 <p>#include &lt;stdio.h&gt;</p>
 <p>void main()<br/>{<br/> float a = 0.5;<br/> double b = 1.2;<br/> int c = 3;</p>
 <p>b = b + a + c; // 浮点数和整数之间的运算</p>
 <p>/* 输出 a、b、c 到屏幕 */<br/> printf("a = %3.1f, b = %3.1f, c = %d", a, b, c);<br/>}</p>
 <p><img alt="" height="40" src="./../images/螢幕擷取畫面 2023-12-21 025413.png" width="200"/></p>
 <p></p>
+<p>2.</p>
 <p>#include &lt;stdio.h&gt;</p>
 <p>int main()<br/>{<br/> char x, y;<br/> x = 'a';<br/> y = (char)97;</p>
 <p>/* 输出 x, y, 以及 y 的 ASCII 值 */<br/> printf("x = %c, y = %c, y 的 ASCII 值 = %d", x, y, y);</p>
 <p>return 0;<br/>}</p>
 <p><img alt="" height="55" src="./../images/螢幕擷取畫面 2023-12-21 025439.png" width="512"/></p>
 <p></p>
+<p>3.</p>
 <p>#include &lt;stdio.h&gt;</p>
 <p>int main()<br/>{<br/> int a = 64;<br/> int b = 0x40; // 以十六进制表示<br/> long c = 64L;</p>
 <p>printf("%d, %d, %ld", a, b, c);</p>
 <p>return 0;<br/>}</p>
 <p><img alt="" height="168" src="./../images/螢幕擷取畫面 2023-12-21 035534.png" width="500"/></p>
 <p></p>
+<p>4.</p>
 <p>#include &lt;stdio.h&gt;</p>
 <p>int main()<br/>{<br/> int i;<br/> printf("输入一个整数：");<br/> scanf("%d", &amp;i); /* 使用 &amp;（地址运算符）获取变量 i 的地址 */<br/> printf("输入的数字是 %d", i);</p>
 <p>return 0;<br/>}</p>
 <p><img alt="" height="99" src="./../images/螢幕擷取畫面 2023-12-21 025610.png" width="500"/></p>
-<p></p>
+<p>5.</p>
 <p>#include &lt;stdio.h&gt;</p>
 <p>int main()<br/>{<br/> int a, b;<br/> a = 10; b = 3;</p>
 <p>printf("%d \n", a * b); // 乘法<br/> printf("%d \n", a / b); // 除法<br/> printf("%d \n", a + b); // 加法<br/> printf("%d \n", a - b); // 减法<br/> printf("%d \n", a % b); // 求余</p>
 <p>return 0;<br/>}</p>
 <p><img alt="" height="120" src="./../images/螢幕擷取畫面 2023-12-21 025634.png" width="400"/></p>
-<p></p>
+<p>6.</p>
 <p>#include &lt;stdio.h&gt;</p>
 <p>int main()<br/>{<br/> int a = 10, b = 5;</p>
 <p>printf("a == b is %d \n", a == b); // 等于<br/> printf("a &gt; b is %d \n", a &gt; b); // 大于<br/> printf("a &lt; b is %d \n", a &lt; b); // 小于<br/> printf("a &gt;= b is %d \n", a &gt;= b); // 大于等于<br/> printf("a &lt;= b is %d \n", a &lt;= b); // 小于等于<br/> printf("a != b is %d \n", a != b); // 不等于</p>
@@ -179,28 +183,115 @@ img.add_border {
 <p>b = 10;<br/> printf("a == b is %d \n", a == b); // 等于<br/> printf("a &gt; b is %d \n", a &gt; b); // 大于<br/> printf("a &lt; b is %d \n", a &lt; b); // 小于<br/> printf("a &gt;= b is %d \n", a &gt;= b); // 大于等于<br/> printf("a &lt;= b is %d \n", a &lt;= b); // 小于等于<br/> printf("a != b is %d \n", a != b); // 不等于</p>
 <p>return 0;<br/>}</p>
 <p><img alt="" height="243" src="./../images/螢幕擷取畫面 2023-12-21 025642.png" width="300"/></p>
-<p></p>
+<p>7.</p>
 <p>#include &lt;stdio.h&gt;</p>
 <p>void main()<br/>{<br/> int a, b;<br/> a = 15;<br/> b = 1;</p>
 <p>printf("%d \n", a | b); /* a OR b（按位或运算） */<br/> printf("%d \n", a &amp; b); /* a AND b（按位与运算） */<br/> printf("%d \n", a ^ b); /* a XOR b（按位异或运算） */<br/> printf("%d \n", a &lt;&lt; 1); /* a 位元左移 1 位 */<br/> printf("%d \n", a &gt;&gt; 1); /* a 位元右移一位 */<br/> printf("%d \n", ~a); /* a 的补码运算 */</p>
 <p>return 0;<br/>}</p>
 <p><img alt="" height="141" src="./../images/螢幕擷取畫面 2023-12-21 025654.png" width="300"/></p>
-<p></p>
+<p>8.</p>
 <p>#include &lt;stdio.h&gt;</p>
 <p>void main()<br/>{<br/> int a;<br/> a = 3;<br/> printf("%d\n", !a); /* 打印 a 的逻辑非结果（a 不为 0，则逻辑非为 0） */</p>
 <p>a = 0;<br/> printf("%d\n", !a); /* 打印 a 的逻辑非结果（a 为 0，则逻辑非为 1） */</p>
 <p>return 0;<br/>}</p>
 <p><img alt="" height="67" src="./../images/螢幕擷取畫面 2023-12-21 025659.png" width="300"/></p>
-<p></p>
+<p>9.</p>
 <p>#include &lt;stdio.h&gt;</p>
 <p>void main()<br/>{<br/> printf("%d\n", 1 &amp;&amp; 3); /* 打印两个表达式的逻辑与结果（两者都为真，则结果为真） */<br/> printf("%d\n", 0 &amp;&amp; 0); /* 打印两个表达式的逻辑与结果（只要有一个为假，则结果为假） */<br/> printf("%d\n", 2 &amp;&amp; 2); /* 打印两个表达式的逻辑与结果（两者都为真，则结果为真） */</p>
 <p>return 0;<br/>}</p>
 <p><img caption="false" height="90" src="./../images/螢幕擷取畫面 2023-12-21 025704.png" width="300"/></p>
-<p></p>
+<p>10.</p>
 <p>#include &lt;stdio.h&gt;</p>
 <p>void main()<br/>{<br/> char a;<br/> printf("int 类型的大小为 %d 字节\n", sizeof(int));<br/> printf("char 类型变量 a 的大小为 %d 字节\n", sizeof(a));</p>
 <p>return 0;<br/>}</p>
-<p><img alt="" height="215" src="./../images/螢幕擷取畫面 2023-12-21 025742.png" width="500"/></p><br />6w << <a href='6w.html'>Previous</a> <a href='W12.html'>Next</a> >> W12</div>
+<p><img alt="" height="215" src="./../images/螢幕擷取畫面 2023-12-21 025742.png" width="500"/></p>
+<p></p>
+<p>1.</p>
+<p>#include &lt;stdio.h&gt;</p>
+<p>/* 读取和显示一个字符 */<br/>int main() {<br/> char c;</p>
+<p>printf("请输入一个字符： ");<br/> c = getchar(); /* 读取输入的字符 */<br/> <br/> printf("输入的字符是： ");<br/> putchar(c); /* 输出字符 */</p>
+<p>return 0;<br/>}</p>
+<p><img alt="" height="44" src="./../images/螢幕擷取畫面 2023-12-21 043156.png" width="300"/></p>
+<p></p>
+<p>2.</p>
+<p>#define _CRT_SECURE_NO_WARNINGS<br/>#include &lt;stdio.h&gt;</p>
+<p>/* 读取两个整数，计算它们的总和并打印结果 */<br/>int main()<br/>{<br/> int this_is_a_number1, this_is_a_number2, total;</p>
+<p>printf("请输入一个整数：\n ");<br/> scanf("%d", &amp;this_is_a_number1); /* 读取输入的整数 */<br/> printf("你输入了 %d\n", this_is_a_number1);</p>
+<p>printf("请输入另一个整数：\n ");<br/> scanf("%d", &amp;this_is_a_number2); /* 读取输入的整数 */<br/> printf("你输入了 %d\n", this_is_a_number2);</p>
+<p>total = this_is_a_number1 + this_is_a_number2; /* 计算两个整数的总和 */<br/> printf("总和为 %d\n", total);</p>
+<p>return 0;<br/>}</p>
+<p><img caption="false" height="368" src="./../images/螢幕擷取畫面 2023-12-21 044517.png" width="500"/></p>
+<p></p>
+<p>3.</p>
+<p>#define _CRT_SECURE_NO_WARNINGS<br/>#include &lt;stdio.h&gt;</p>
+<p>/* 读取两个浮点数，计算它们的总和并打印结果 */<br/>int main()<br/>{<br/> float this_is_a_number1, this_is_a_number2, total;</p>
+<p>printf("请输入一个小数：\n ");<br/> scanf("%f", &amp;this_is_a_number1); /* 读取输入的浮点数 */<br/> printf("你输入了 %f\n", this_is_a_number1);</p>
+<p>printf("请输入另一个小数：\n ");<br/> scanf("%f", &amp;this_is_a_number2); /* 读取输入的浮点数 */<br/> printf("你输入了 %f\n", this_is_a_number2);</p>
+<p>total = this_is_a_number1 + this_is_a_number2; /* 计算两个浮点数的总和 */<br/> printf("总和为 %f\n", total);</p>
+<p>return 0;<br/>}</p>
+<p><img caption="false" height="237" src="./../images/螢幕擷取畫面 2023-12-21 043225.png" width="500"/></p>
+<p></p>
+<p>4.</p>
+<p>#define _CRT_SECURE_NO_WARNINGS<br/>#include &lt;stdio.h&gt;</p>
+<p>/* 读取两个浮点数，计算它们的乘积并打印结果 */<br/>int main()<br/>{<br/> float this_is_a_number1, this_is_a_number2, total;</p>
+<p>printf("请输入一个小数：\n ");<br/> scanf("%f", &amp;this_is_a_number1); /* 读取输入的浮点数 */<br/> printf("你输入了 %f\n", this_is_a_number1);</p>
+<p>printf("请输入另一个小数：\n ");<br/> scanf("%f", &amp;this_is_a_number2); /* 读取输入的浮点数 */<br/> printf("你输入了 %f\n", this_is_a_number2);</p>
+<p>total = this_is_a_number1 * this_is_a_number2; /* 计算两个浮点数的乘积 */<br/> printf("乘积为 %f\n", total);</p>
+<p>return 0;<br/>}</p>
+<p><img alt="" height="202" src="./../images/螢幕擷取畫面 2023-12-21 043239.png" width="500"/></p>
+<p></p>
+<p>5.</p>
+<p>#define _CRT_SECURE_NO_WARNINGS<br/>#include &lt;stdio.h&gt;</p>
+<p>/* 除法：计算两个浮点数的商 */<br/>int main()<br/>{<br/> float this_is_a_number1, this_is_a_number2, total;</p>
+<p>printf("请输入一个数字：\n");<br/> scanf("%f", &amp;this_is_a_number1); /* 读取输入的数字 */<br/> printf("你输入了 %f\n", this_is_a_number1);</p>
+<p>printf("请输入另一个数字：\n");<br/> scanf("%f", &amp;this_is_a_number2); /* 读取输入的数字 */<br/> printf("你输入了 %f\n", this_is_a_number2);</p>
+<p>total = this_is_a_number1 / this_is_a_number2; /* 计算两个数字的商 */<br/> printf("商为 %f\n", total);</p>
+<p>return 0;<br/>}</p>
+<p><img alt="" height="207" src="./../images/螢幕擷取畫面 2023-12-21 043257.png" width="500"/></p>
+<p></p>
+<p>6.</p>
+<p>##define _CRT_SECURE_NO_WARNINGS<br/>#include &lt;stdio.h&gt;</p>
+<p>/* 演示 for 循环：计算用户输入的十个浮点数的总和 */<br/>int main()<br/>{<br/> float this_is_a_number, total;<br/> int i;</p>
+<p>total = 0;</p>
+<p>/* for 循环执行 10 次 */<br/> for (i = 0; i &lt; 10; i++)<br/> {<br/> printf("请输入一个数字：\n");<br/> scanf("%f", &amp;this_is_a_number); /* 读取输入的数字 */<br/> total = total + this_is_a_number;<br/> }</p>
+<p>printf("总和为：%f\n", total);</p>
+<p>return 0;<br/>}</p>
+<p><img caption="false" height="288" src="./../images/螢幕擷取畫面 2023-12-21 043356.png" width="500"/></p>
+<p></p>
+<p>7.</p>
+<p>#define _CRT_SECURE_NO_WARNINGS<br/>#include &lt;stdio.h&gt;</p>
+<p>/* 演示嵌套的 for 循环：计算用户输入的二维数组（10行2列）的总和 */<br/>int main()<br/>{<br/> float this_is_a_number, total;<br/> int i, j;</p>
+<p>total = 0;</p>
+<p>/* 外部 for 循环执行 10 次 */<br/> for (i = 0; i &lt; 10; i++)<br/> {<br/> /* 内部 for 循环执行 2 次 */<br/> for (j = 0; j &lt; 2; j++)<br/> {<br/> printf("请输入一个数字：\n");<br/> scanf("%f", &amp;this_is_a_number); /* 读取输入的数字 */<br/> total = total + this_is_a_number;<br/> }<br/> }</p>
+<p>printf("总和为：%f\n", total);</p>
+<p>return 0;<br/>}</p>
+<p><img caption="false" height="816" src="./../images/螢幕擷取畫面 2023-12-21 043502.png" width="500"/></p>
+<p></p>
+<p>8.</p>
+<p>#define _CRT_SECURE_NO_WARNINGS<br/>#include &lt;stdio.h&gt;</p>
+<p>/* 演示 do-while 循环：计算用户输入的十个浮点数的总和 */<br/>int main()<br/>{<br/> float this_is_a_number, total;<br/> int i;</p>
+<p>total = 0;<br/> i = 0;</p>
+<p>/* do-while 循环执行，直到 i 的值达到 10 */<br/> do<br/> {<br/> printf("请输入一个数字：\n");<br/> scanf("%f", &amp;this_is_a_number); /* 读取输入的数字 */<br/> total = total + this_is_a_number;<br/> i++;<br/> } while (i &lt; 10);</p>
+<p>printf("总和为：%f\n", total);</p>
+<p>return 0;<br/>}</p>
+<p><img alt="" height="558" src="./../images/螢幕擷取畫面 2023-12-21 043532.png" width="500"/></p>
+<p>9.</p>
+<p>#define _CRT_SECURE_NO_WARNINGS<br/>#include &lt;stdio.h&gt;</p>
+<p>/* switch语句示例：根据用户输入的整数值执行不同的操作 */<br/>int main()<br/>{<br/> int this_is_a_number;</p>
+<p>printf("请输入一个介于1和5之间的整数：\n ");<br/> scanf("%d", &amp;this_is_a_number);</p>
+<p>switch (this_is_a_number)<br/> {<br/> case 1:<br/> printf("Case1: 值是：%d", this_is_a_number);<br/> break;<br/> case 2:<br/> printf("Case2: 值是：%d", this_is_a_number);<br/> break;<br/> case 3:<br/> printf("Case3: 值是：%d", this_is_a_number);<br/> break;<br/> case 4:<br/> printf("Case4: 值是：%d", this_is_a_number);<br/> break;<br/> case 5:<br/> printf("Case5: 值是：%d", this_is_a_number);<br/> break;<br/> default:<br/> printf("错误：值是：%d", this_is_a_number); /* 输入的数字不在1和5之间 */<br/> }</p>
+<p>return 0;<br/>}</p>
+<p><img alt="" height="585" src="./../images/螢幕擷取畫面 2023-12-21 043548.png" width="500"/></p>
+<p></p>
+<p>10.</p>
+<p>#include &lt;stdio.h&gt;</p>
+<p>/* if语句示例：根据用户输入的整数值执行不同的条件分支 */<br/>int main()<br/>{<br/> int this_is_a_number;</p>
+<p>printf("请输入一个介于1和10之间的整数：\n ");<br/> scanf("%d", &amp;this_is_a_number);</p>
+<p>if (this_is_a_number &lt; 6)<br/> {<br/> printf("这个数字小于6;\n ");<br/> }</p>
+<p>printf("请输入一个介于10和20之间的整数：\n ");<br/> scanf("%d", &amp;this_is_a_number);</p>
+<p>if (this_is_a_number &lt; 16)<br/> {<br/> printf("这个数字小于16\n ");<br/> }<br/> else<br/> {<br/> printf("这个数字大于等于16\n ");<br/> }</p>
+<p>return 0;<br/>}</p>
+<p><img caption="false" height="330" src="./../images/螢幕擷取畫面 2023-12-21 043725.png" width="500"/></p><br />6w << <a href='6w.html'>Previous</a> <a href='W12.html'>Next</a> >> W12</div>
         
     <!-- footer -->
       <div class="container">

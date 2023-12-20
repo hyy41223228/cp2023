@@ -9,3 +9,7 @@ int main()
  printf("Please enter another number: \n");
  scanf("%f", &this_is_a_number2); /* read decimal number in */
  printf("You entered %f\n", this_is_a_number2);
+  total = this_is_a_number1 + this_is_a_number2;/* add the numbers */
+   printf("total is %f\n", total);
+   return 0;
+  }
