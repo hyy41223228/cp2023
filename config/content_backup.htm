@@ -360,36 +360,117 @@ void draw_uk_flag(gdImagePtr img) {
     gdImageFilledRectangle(img, 0, center_y + 1.5 * cross_arm_width, width, center_y - 1.5 * cross_arm_width, red);
 }</pre>
 <p><img alt="" height="200" src="/images/uk_flag.png" width="400"/></p>
-<h1>C_EX</h1>
+<p></p>
+<p>#include &lt;stdio.h&gt;<br/>#include &lt;gd.h&gt;<br/>#include &lt;math.h&gt;</p>
+<p>#define WIDTH 900<br/>#define HEIGHT 600<br/>#define FILENAME "south_korea_flag.png"</p>
+<p>int main() {<br/> gdImagePtr im;<br/> FILE *pngout;<br/> int white, black, red, blue;</p>
+<p>im = gdImageCreate(WIDTH, HEIGHT);</p>
+<p>white = gdImageColorAllocate(im, 255, 255, 255);<br/> black = gdImageColorAllocate(im, 0, 0, 0);<br/> red = gdImageColorAllocate(im, 205, 0, 0);<br/> blue = gdImageColorAllocate(im, 0, 56, 168);</p>
+<p>// Background (white)<br/> gdImageFilledRectangle(im, 0, 0, WIDTH, HEIGHT , white);</p>
+<p>// Blue Circle (Yin-Yang Symbol)<br/> gdImageFilledArc(im, WIDTH / 2, HEIGHT / 2, WIDTH / 3, HEIGHT / 2, 210, 30, red, gdArc);</p>
+<p>// Red Circle (Yin-Yang Symbol)<br/> gdImageFilledArc(im, WIDTH / 2, HEIGHT / 2, WIDTH / 3, HEIGHT / 2, 30, 210, blue, gdArc);</p>
+<p>int circleX = 385; // 圓心的 X 座標<br/> int circleY = 262.5; // 圓心的 Y 座標<br/> int circleRadius = 75;</p>
+<p>// 繪製圓形<br/> gdImageFilledEllipse(im, circleX, circleY, circleRadius * 2, circleRadius * 2, red);</p>
+<p>int circleX2 = 515; // 圓心的 X 座標<br/> <br/> int circleY2 = 337.5;</p>
+<p>// 繪製圓形<br/> gdImageFilledEllipse(im, circleX2, circleY2, circleRadius * 2, circleRadius * 2, blue);<br/> <br/> {<br/> <br/> <br/> // 起點和終點位置<br/> <br/> int startX = 340; <br/> // 線的起點 X 座標<br/> <br/> int startY = 90; <br/> // 線的起點 Y 座標<br/> <br/> int endX = 200; <br/> // 線的終點 X 座標<br/> <br/> int endY = 260; <br/> // 線的終點 Y 座標<br/> <br/> int lineWidth = 23; // 線的寬度</p>
+<p>// 繪製線段<br/> gdImageSetThickness(im, lineWidth);<br/> gdImageLine(im, startX, startY, endX, endY, black);<br/> // 繪製線段<br/> gdImageSetThickness(im, lineWidth);<br/> gdImageLine(im, startX -35, startY -10, endX -35, endY -10, black);</p>
+<p>// 繪製線段<br/> gdImageSetThickness(im, lineWidth);<br/> gdImageLine(im, startX -70, startY -20, endX -70, endY -20, black);</p>
+<p>int startX2 = 213; <br/> // 線的起點 X 座標</p>
+<p>int startY2 = 270; <br/> // 線的起點 Y 座標</p>
+<p>int endX2 = 133; <br/> // 線的終點 X 座標</p>
+<p>int endY2 = 210; <br/> // 線的終點 Y 座標</p>
+<p>int lineWidth2 = 25; // 線的寬度</p>
+<p>// 繪製線段<br/> gdImageSetThickness(im, lineWidth);<br/> gdImageLine(im, startX2 +3, startY2, endX2 +3, endY2, white);</p>
+<p>gdImageSetThickness(im, lineWidth +10);<br/>gdImageLine(im, startX2 -17, startY2 +9 , endX2 -17, endY2 +9 , white);</p>
+<p>gdImageSetThickness(im, lineWidth );<br/>gdImageLine(im, startX2 +115, startY2 -145, endX2 +115, endY2 -145, white);</p>
+<p>gdImageSetThickness(im, lineWidth);<br/>gdImageLine(im, startX2 +120, startY2 -155, endX2 +120, endY2 -155, white);</p>
+<p>gdImageSetThickness(im, lineWidth +12);<br/>gdImageLine(im, startX2 +145, startY2 -155, endX2 +145, endY2 -155, white);<br/>}<br/> {<br/> // 起點和終點位置<br/> <br/> int startX = 330; <br/> // 線的起點 X 座標<br/> <br/> int startY = 520; <br/> // 線的起點 Y 座標<br/> <br/> int endX = 190; <br/> // 線的終點 X 座標<br/> <br/> int endY = 350; <br/> // 線的終點 Y 座標<br/> <br/> int lineWidth = 23; // 線的寬度</p>
+<p>// 繪製線段<br/> gdImageSetThickness(im, lineWidth);<br/> gdImageLine(im, startX, startY, endX, endY, black);<br/> // 繪製線段<br/> gdImageSetThickness(im, lineWidth);<br/> gdImageLine(im, startX -35, startY +10, endX -35, endY +10, black);</p>
+<p>// 繪製線段<br/> gdImageSetThickness(im, lineWidth);<br/> gdImageLine(im, startX -70, startY +20, endX -70, endY +20, black);</p>
+<p>int startX2 = 213; <br/> // 線的起點 X 座標</p>
+<p>int startY2 = 330; <br/> // 線的起點 Y 座標</p>
+<p>int endX2 = 133; <br/> // 線的終點 X 座標</p>
+<p>int endY2 = 390; <br/> // 線的終點 Y 座標</p>
+<p>int lineWidth2 = 25; // 線的寬度</p>
+<p>// 繪製線段<br/> gdImageSetThickness(im, lineWidth +8);<br/> gdImageLine(im, startX2 -11, startY2, endX2 -11, endY2, white);</p>
+<p>gdImageSetThickness(im, lineWidth +10);<br/>gdImageLine(im, startX2 -30, startY2 -9 , endX2 -30, endY2 -9 , white);</p>
+<p>gdImageSetThickness(im, lineWidth );<br/>gdImageLine(im, startX2 +100, startY2 +150, endX2 +100, endY2 +150, white);</p>
+<p>gdImageSetThickness(im, lineWidth);<br/>gdImageLine(im, startX2 +120, startY2 +155, endX2 +120, endY2 +155, white);</p>
+<p>gdImageSetThickness(im, lineWidth +14);<br/>gdImageLine(im, startX2 +145, startY2 +157, endX2 +145, endY2 +157, white);</p>
+<p>gdImageSetThickness(im, lineWidth -10);<br/>gdImageLine(im, 232, 426, 206, 448, white);</p>
+<p>}</p>
+<p>{<br/> // 起點和終點位置<br/> <br/> int startX = 564; <br/> // 線的起點 X 座標<br/> <br/> int startY = 520; <br/> // 線的起點 Y 座標<br/> <br/> int endX = 704; <br/> // 線的終點 X 座標<br/> <br/> int endY = 350; <br/> // 線的終點 Y 座標<br/> <br/> int lineWidth = 23; // 線的寬度<br/> <br/> // 繪製線段<br/> gdImageSetThickness(im, lineWidth);<br/> gdImageLine(im, startX +70, startY +20, endX +70, endY +20, black);</p>
+<p>// 繪製線段<br/> gdImageSetThickness(im, lineWidth);<br/> gdImageLine(im, startX, startY, endX, endY, black);</p>
+<p>// 繪製線段<br/> gdImageSetThickness(im, lineWidth);<br/> gdImageLine(im, startX +35, startY +10, endX +35, endY +10, black);<br/> <br/>gdImageSetThickness(im, lineWidth -10);<br/>gdImageLine(im, 624, 400, 734, 490, white);<br/> <br/> int startX2 = 553; <br/> // 線的起點 X 座標</p>
+<p>int startY2 = 330; <br/> // 線的起點 Y 座標</p>
+<p>int endX2 = 633; <br/> // 線的終點 X 座標</p>
+<p>int endY2 = 390; <br/> // 線的終點 Y 座標</p>
+<p>int lineWidth2 = 25; // 線的寬度</p>
+<p>// 繪製線段<br/> gdImageSetThickness(im, lineWidth +8);<br/> gdImageLine(im, startX2 +139, startY2, endX2 +139, endY2, white);</p>
+<p>gdImageSetThickness(im, lineWidth +10);<br/>gdImageLine(im, startX2 +157, startY2 -9 , endX2 +157, endY2 -9 , white);</p>
+<p>gdImageSetThickness(im, lineWidth);<br/>gdImageLine(im, startX2 +25, startY2 +155, endX2 +25, endY2 +155, white);</p>
+<p>gdImageSetThickness(im, lineWidth +30);<br/>gdImageLine(im, startX2 -3, startY2 +170, endX2 , endY2 +170, white);<br/> }<br/> {<br/> // 起點和終點位置<br/> <br/> int startX = 330; <br/> // 線的起點 X 座標<br/> <br/> int startY = 520; <br/> // 線的起點 Y 座標<br/> <br/> int endX = 190; <br/> // 線的終點 X 座標<br/> <br/> int endY = 350; <br/> // 線的終點 Y 座標<br/> <br/> int lineWidth = 23; // 線的寬度</p>
+<p>// 繪製線段<br/> gdImageSetThickness(im, lineWidth);<br/> gdImageLine(im, startX, startY, endX, endY, black);<br/> // 繪製線段<br/> gdImageSetThickness(im, lineWidth);<br/> gdImageLine(im, startX -35, startY +10, endX -35, endY +10, black);</p>
+<p>// 繪製線段<br/> gdImageSetThickness(im, lineWidth);<br/> gdImageLine(im, startX -70, startY +20, endX -70, endY +20, black);</p>
+<p>int startX2 = 213; <br/> // 線的起點 X 座標</p>
+<p>int startY2 = 330; <br/> // 線的起點 Y 座標</p>
+<p>int endX2 = 133; <br/> // 線的終點 X 座標</p>
+<p>int endY2 = 390; <br/> // 線的終點 Y 座標</p>
+<p>int lineWidth2 = 25; // 線的寬度</p>
+<p>// 繪製線段<br/> gdImageSetThickness(im, lineWidth +8);<br/> gdImageLine(im, startX2 -11, startY2, endX2 -11, endY2, white);</p>
+<p>gdImageSetThickness(im, lineWidth +10);<br/>gdImageLine(im, startX2 -30, startY2 -9 , endX2 -30, endY2 -9 , white);</p>
+<p>gdImageSetThickness(im, lineWidth );<br/>gdImageLine(im, startX2 +100, startY2 +150, endX2 +100, endY2 +150, white);</p>
+<p>gdImageSetThickness(im, lineWidth);<br/>gdImageLine(im, startX2 +120, startY2 +155, endX2 +120, endY2 +155, white);</p>
+<p>gdImageSetThickness(im, lineWidth +14);<br/>gdImageLine(im, startX2 +145, startY2 +157, endX2 +145, endY2 +157, white);</p>
+<p>gdImageSetThickness(im, lineWidth -10);<br/>gdImageLine(im, 232, 426, 206, 448, white);</p>
+<p>}<br/> {<br/> // 起點和終點位置<br/> <br/> int startX = 564; <br/> // 線的起點 X 座標<br/> <br/> int startY = 97; <br/> // 線的起點 Y 座標<br/> <br/> int endX = 704; <br/> // 線的終點 X 座標<br/> <br/> int endY = 267; <br/> // 線的終點 Y 座標<br/> <br/> int lineWidth = 23; // 線的寬度<br/> <br/> // 繪製線段<br/> gdImageSetThickness(im, lineWidth);<br/> gdImageLine(im, startX +70, startY -20, endX +70, endY -20, black);</p>
+<p>// 繪製線段<br/> gdImageSetThickness(im, lineWidth);<br/> gdImageLine(im, startX, startY, endX, endY, black);</p>
+<p>gdImageSetThickness(im, lineWidth -10);<br/>gdImageLine(im, 624, 212, 734, 118, white);<br/> <br/> // 繪製線段<br/> gdImageSetThickness(im, lineWidth);<br/> gdImageLine(im, startX +35, startY -10, endX +35, endY -10, black);<br/> <br/> int startX2 = 553; <br/> // 線的起點 X 座標</p>
+<p>int startY2 = 277; <br/> // 線的起點 Y 座標</p>
+<p>int endX2 = 633; <br/> // 線的終點 X 座標</p>
+<p>int endY2 = 217; <br/> // 線的終點 Y 座標</p>
+<p>int lineWidth2 = 25; // 線的寬度</p>
+<p>// 繪製線段<br/> gdImageSetThickness(im, lineWidth +8);<br/> gdImageLine(im, startX2 +134, startY2, endX2 +134, endY2, white);</p>
+<p>gdImageSetThickness(im, lineWidth +10);<br/>gdImageLine(im, startX2 +157, startY2 +9 , endX2 +157, endY2 +9 , white);</p>
+<p>gdImageSetThickness(im, lineWidth);<br/>gdImageLine(im, startX2 +25, startY2 -155, endX2 +25, endY2 -155, white);</p>
+<p>gdImageSetThickness(im, lineWidth +30);<br/>gdImageLine(im, startX2 -5, startY2 -155, endX2 -5, endY2 -155, white);</p>
+<p>}<br/> <br/> // Save image<br/>FILE *outputFile = fopen("./../images/korea_flag.png", "wb");<br/>if (outputFile == NULL) {<br/> fprintf(stderr, "Error opening the output file.\n");<br/> return 1;<br/>}<br/> gdImagePngEx(im, outputFile, 9);<br/> fclose(outputFile);<br/> gdImageDestroy(im);<br/> return 0;<br/> }</p>
+<p><img alt="" height="267" src="/images/korea_flag.png" width="400"/></p>
+<p><img alt="" src="/images/洗白啊.mp4" width="400"/><video controls="controls" height="630" width="1008">
+<source src="/imges洗白啊.mp4" type="video/mp4"/></video></p><h1>C_EX</h1>
+<p>1. </p>
 <p>#include &lt;stdio.h&gt;</p>
 <p>void main()<br/>{<br/> float a = 0.5;<br/> double b = 1.2;<br/> int c = 3;</p>
 <p>b = b + a + c; // 浮点数和整数之间的运算</p>
 <p>/* 输出 a、b、c 到屏幕 */<br/> printf("a = %3.1f, b = %3.1f, c = %d", a, b, c);<br/>}</p>
 <p><img alt="" height="40" src="/images/螢幕擷取畫面 2023-12-21 025413.png" width="200"/></p>
 <p></p>
+<p>2.</p>
 <p>#include &lt;stdio.h&gt;</p>
 <p>int main()<br/>{<br/> char x, y;<br/> x = 'a';<br/> y = (char)97;</p>
 <p>/* 输出 x, y, 以及 y 的 ASCII 值 */<br/> printf("x = %c, y = %c, y 的 ASCII 值 = %d", x, y, y);</p>
 <p>return 0;<br/>}</p>
 <p><img alt="" height="55" src="/images/螢幕擷取畫面 2023-12-21 025439.png" width="512"/></p>
 <p></p>
+<p>3.</p>
 <p>#include &lt;stdio.h&gt;</p>
 <p>int main()<br/>{<br/> int a = 64;<br/> int b = 0x40; // 以十六进制表示<br/> long c = 64L;</p>
 <p>printf("%d, %d, %ld", a, b, c);</p>
 <p>return 0;<br/>}</p>
 <p><img alt="" height="168" src="/images/螢幕擷取畫面 2023-12-21 035534.png" width="500"/></p>
 <p></p>
+<p>4.</p>
 <p>#include &lt;stdio.h&gt;</p>
 <p>int main()<br/>{<br/> int i;<br/> printf("输入一个整数：");<br/> scanf("%d", &amp;i); /* 使用 &amp;（地址运算符）获取变量 i 的地址 */<br/> printf("输入的数字是 %d", i);</p>
 <p>return 0;<br/>}</p>
 <p><img alt="" height="99" src="/images/螢幕擷取畫面 2023-12-21 025610.png" width="500"/></p>
-<p></p>
+<p>5.</p>
 <p>#include &lt;stdio.h&gt;</p>
 <p>int main()<br/>{<br/> int a, b;<br/> a = 10; b = 3;</p>
 <p>printf("%d \n", a * b); // 乘法<br/> printf("%d \n", a / b); // 除法<br/> printf("%d \n", a + b); // 加法<br/> printf("%d \n", a - b); // 减法<br/> printf("%d \n", a % b); // 求余</p>
 <p>return 0;<br/>}</p>
 <p><img alt="" height="120" src="/images/螢幕擷取畫面 2023-12-21 025634.png" width="400"/></p>
-<p></p>
+<p>6.</p>
 <p>#include &lt;stdio.h&gt;</p>
 <p>int main()<br/>{<br/> int a = 10, b = 5;</p>
 <p>printf("a == b is %d \n", a == b); // 等于<br/> printf("a &gt; b is %d \n", a &gt; b); // 大于<br/> printf("a &lt; b is %d \n", a &lt; b); // 小于<br/> printf("a &gt;= b is %d \n", a &gt;= b); // 大于等于<br/> printf("a &lt;= b is %d \n", a &lt;= b); // 小于等于<br/> printf("a != b is %d \n", a != b); // 不等于</p>
@@ -397,24 +478,24 @@ void draw_uk_flag(gdImagePtr img) {
 <p>b = 10;<br/> printf("a == b is %d \n", a == b); // 等于<br/> printf("a &gt; b is %d \n", a &gt; b); // 大于<br/> printf("a &lt; b is %d \n", a &lt; b); // 小于<br/> printf("a &gt;= b is %d \n", a &gt;= b); // 大于等于<br/> printf("a &lt;= b is %d \n", a &lt;= b); // 小于等于<br/> printf("a != b is %d \n", a != b); // 不等于</p>
 <p>return 0;<br/>}</p>
 <p><img alt="" height="243" src="/images/螢幕擷取畫面 2023-12-21 025642.png" width="300"/></p>
-<p></p>
+<p>7.</p>
 <p>#include &lt;stdio.h&gt;</p>
 <p>void main()<br/>{<br/> int a, b;<br/> a = 15;<br/> b = 1;</p>
 <p>printf("%d \n", a | b); /* a OR b（按位或运算） */<br/> printf("%d \n", a &amp; b); /* a AND b（按位与运算） */<br/> printf("%d \n", a ^ b); /* a XOR b（按位异或运算） */<br/> printf("%d \n", a &lt;&lt; 1); /* a 位元左移 1 位 */<br/> printf("%d \n", a &gt;&gt; 1); /* a 位元右移一位 */<br/> printf("%d \n", ~a); /* a 的补码运算 */</p>
 <p>return 0;<br/>}</p>
 <p><img alt="" height="141" src="/images/螢幕擷取畫面 2023-12-21 025654.png" width="300"/></p>
-<p></p>
+<p>8.</p>
 <p>#include &lt;stdio.h&gt;</p>
 <p>void main()<br/>{<br/> int a;<br/> a = 3;<br/> printf("%d\n", !a); /* 打印 a 的逻辑非结果（a 不为 0，则逻辑非为 0） */</p>
 <p>a = 0;<br/> printf("%d\n", !a); /* 打印 a 的逻辑非结果（a 为 0，则逻辑非为 1） */</p>
 <p>return 0;<br/>}</p>
 <p><img alt="" height="67" src="/images/螢幕擷取畫面 2023-12-21 025659.png" width="300"/></p>
-<p></p>
+<p>9.</p>
 <p>#include &lt;stdio.h&gt;</p>
 <p>void main()<br/>{<br/> printf("%d\n", 1 &amp;&amp; 3); /* 打印两个表达式的逻辑与结果（两者都为真，则结果为真） */<br/> printf("%d\n", 0 &amp;&amp; 0); /* 打印两个表达式的逻辑与结果（只要有一个为假，则结果为假） */<br/> printf("%d\n", 2 &amp;&amp; 2); /* 打印两个表达式的逻辑与结果（两者都为真，则结果为真） */</p>
 <p>return 0;<br/>}</p>
 <p><img caption="false" height="90" src="/images/螢幕擷取畫面 2023-12-21 025704.png" width="300"/></p>
-<p></p>
+<p>10.</p>
 <p>#include &lt;stdio.h&gt;</p>
 <p>void main()<br/>{<br/> char a;<br/> printf("int 类型的大小为 %d 字节\n", sizeof(int));<br/> printf("char 类型变量 a 的大小为 %d 字节\n", sizeof(a));</p>
 <p>return 0;<br/>}</p>
@@ -452,7 +533,60 @@ void draw_uk_flag(gdImagePtr img) {
 <p>printf("请输入另一个小数：\n ");<br/> scanf("%f", &amp;this_is_a_number2); /* 读取输入的浮点数 */<br/> printf("你输入了 %f\n", this_is_a_number2);</p>
 <p>total = this_is_a_number1 * this_is_a_number2; /* 计算两个浮点数的乘积 */<br/> printf("乘积为 %f\n", total);</p>
 <p>return 0;<br/>}</p>
-<p></p><h1>W12</h1>
+<p><img alt="" height="202" src="/images/螢幕擷取畫面 2023-12-21 043239.png" width="500"/></p>
+<p></p>
+<p>5.</p>
+<p>#define _CRT_SECURE_NO_WARNINGS<br/>#include &lt;stdio.h&gt;</p>
+<p>/* 除法：计算两个浮点数的商 */<br/>int main()<br/>{<br/> float this_is_a_number1, this_is_a_number2, total;</p>
+<p>printf("请输入一个数字：\n");<br/> scanf("%f", &amp;this_is_a_number1); /* 读取输入的数字 */<br/> printf("你输入了 %f\n", this_is_a_number1);</p>
+<p>printf("请输入另一个数字：\n");<br/> scanf("%f", &amp;this_is_a_number2); /* 读取输入的数字 */<br/> printf("你输入了 %f\n", this_is_a_number2);</p>
+<p>total = this_is_a_number1 / this_is_a_number2; /* 计算两个数字的商 */<br/> printf("商为 %f\n", total);</p>
+<p>return 0;<br/>}</p>
+<p><img alt="" height="207" src="/images/螢幕擷取畫面 2023-12-21 043257.png" width="500"/></p>
+<p></p>
+<p>6.</p>
+<p>##define _CRT_SECURE_NO_WARNINGS<br/>#include &lt;stdio.h&gt;</p>
+<p>/* 演示 for 循环：计算用户输入的十个浮点数的总和 */<br/>int main()<br/>{<br/> float this_is_a_number, total;<br/> int i;</p>
+<p>total = 0;</p>
+<p>/* for 循环执行 10 次 */<br/> for (i = 0; i &lt; 10; i++)<br/> {<br/> printf("请输入一个数字：\n");<br/> scanf("%f", &amp;this_is_a_number); /* 读取输入的数字 */<br/> total = total + this_is_a_number;<br/> }</p>
+<p>printf("总和为：%f\n", total);</p>
+<p>return 0;<br/>}</p>
+<p><img caption="false" height="288" src="/images/螢幕擷取畫面 2023-12-21 043356.png" width="500"/></p>
+<p></p>
+<p>7.</p>
+<p>#define _CRT_SECURE_NO_WARNINGS<br/>#include &lt;stdio.h&gt;</p>
+<p>/* 演示嵌套的 for 循环：计算用户输入的二维数组（10行2列）的总和 */<br/>int main()<br/>{<br/> float this_is_a_number, total;<br/> int i, j;</p>
+<p>total = 0;</p>
+<p>/* 外部 for 循环执行 10 次 */<br/> for (i = 0; i &lt; 10; i++)<br/> {<br/> /* 内部 for 循环执行 2 次 */<br/> for (j = 0; j &lt; 2; j++)<br/> {<br/> printf("请输入一个数字：\n");<br/> scanf("%f", &amp;this_is_a_number); /* 读取输入的数字 */<br/> total = total + this_is_a_number;<br/> }<br/> }</p>
+<p>printf("总和为：%f\n", total);</p>
+<p>return 0;<br/>}</p>
+<p><img caption="false" height="816" src="/images/螢幕擷取畫面 2023-12-21 043502.png" width="500"/></p>
+<p></p>
+<p>8.</p>
+<p>#define _CRT_SECURE_NO_WARNINGS<br/>#include &lt;stdio.h&gt;</p>
+<p>/* 演示 do-while 循环：计算用户输入的十个浮点数的总和 */<br/>int main()<br/>{<br/> float this_is_a_number, total;<br/> int i;</p>
+<p>total = 0;<br/> i = 0;</p>
+<p>/* do-while 循环执行，直到 i 的值达到 10 */<br/> do<br/> {<br/> printf("请输入一个数字：\n");<br/> scanf("%f", &amp;this_is_a_number); /* 读取输入的数字 */<br/> total = total + this_is_a_number;<br/> i++;<br/> } while (i &lt; 10);</p>
+<p>printf("总和为：%f\n", total);</p>
+<p>return 0;<br/>}</p>
+<p><img alt="" height="558" src="/images/螢幕擷取畫面 2023-12-21 043532.png" width="500"/></p>
+<p>9.</p>
+<p>#define _CRT_SECURE_NO_WARNINGS<br/>#include &lt;stdio.h&gt;</p>
+<p>/* switch语句示例：根据用户输入的整数值执行不同的操作 */<br/>int main()<br/>{<br/> int this_is_a_number;</p>
+<p>printf("请输入一个介于1和5之间的整数：\n ");<br/> scanf("%d", &amp;this_is_a_number);</p>
+<p>switch (this_is_a_number)<br/> {<br/> case 1:<br/> printf("Case1: 值是：%d", this_is_a_number);<br/> break;<br/> case 2:<br/> printf("Case2: 值是：%d", this_is_a_number);<br/> break;<br/> case 3:<br/> printf("Case3: 值是：%d", this_is_a_number);<br/> break;<br/> case 4:<br/> printf("Case4: 值是：%d", this_is_a_number);<br/> break;<br/> case 5:<br/> printf("Case5: 值是：%d", this_is_a_number);<br/> break;<br/> default:<br/> printf("错误：值是：%d", this_is_a_number); /* 输入的数字不在1和5之间 */<br/> }</p>
+<p>return 0;<br/>}</p>
+<p><img alt="" height="585" src="/images/螢幕擷取畫面 2023-12-21 043548.png" width="500"/></p>
+<p></p>
+<p>10.</p>
+<p>#include &lt;stdio.h&gt;</p>
+<p>/* if语句示例：根据用户输入的整数值执行不同的条件分支 */<br/>int main()<br/>{<br/> int this_is_a_number;</p>
+<p>printf("请输入一个介于1和10之间的整数：\n ");<br/> scanf("%d", &amp;this_is_a_number);</p>
+<p>if (this_is_a_number &lt; 6)<br/> {<br/> printf("这个数字小于6;\n ");<br/> }</p>
+<p>printf("请输入一个介于10和20之间的整数：\n ");<br/> scanf("%d", &amp;this_is_a_number);</p>
+<p>if (this_is_a_number &lt; 16)<br/> {<br/> printf("这个数字小于16\n ");<br/> }<br/> else<br/> {<br/> printf("这个数字大于等于16\n ");<br/> }</p>
+<p>return 0;<br/>}</p>
+<p><img caption="false" height="330" src="/images/螢幕擷取畫面 2023-12-21 043725.png" width="500"/></p><h1>W12</h1>
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 #include &lt;gd.h&gt;
 #include &lt;math.h&gt;
