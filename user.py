@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, current_app, \
+1from flask import Blueprint, render_template, current_app, \
     send_from_directory, session, redirect, url_for
 import os
 
