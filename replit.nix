@@ -1,5 +1,6 @@
 { pkgs }: {
     deps = [
+      pkgs.haskellPackages.up-grade
       pkgs.libev
       pkgs.gnuplot
       pkgs.ncurses.dev
