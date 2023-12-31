@@ -1310,7 +1310,8 @@ printf("这个数字大于等于16\n ");
 
 return 0;
 }</pre>
-<p><br/><img caption="false" height="330" src="/images/螢幕擷取畫面 2023-12-21 043725.png" width="500"/></p><h1>W12</h1>
+<p><br/><img caption="false" height="330" src="/images/螢幕擷取畫面 2023-12-21 043725.png" width="500"/></p>
+<h1>W12</h1>
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 #include &lt;gd.h&gt;
 #include &lt;math.h&gt;
@@ -1449,75 +1450,224 @@ int main(int argc, char** argv) {
 }
 </pre>
 <p><img alt="" height="122" src="/images/螢幕擷取畫面 2023-12-20 191959.png" width="200"/><br/><br/></p>
-<p>#include &lt;stdio.h&gt;</p>
-<p>int main(int argc, char** argv) {<br/> // 检查C标准版本<br/> #if __STDC_VERSION__ &gt;= 201710L<br/> printf("我们正在使用 C18 标准!\n");<br/> #elif __STDC_VERSION__ &gt;= 201112L<br/> printf("我们正在使用 C11 标准!\n");<br/> #elif __STDC_VERSION__ &gt;= 199901L<br/> printf("我们正在使用 C99 标准!\n");<br/> #else<br/> printf("我们正在使用 C89/C90 标准!\n");<br/> #endif</p>
-<p>// 表示程序成功执行<br/> return 0;<br/>}</p>
-<p><img alt="" height="65" src="/images/螢幕擷取畫面 2023-12-20 192136.png" width="200"/></p>
 <p></p>
-<p> #include &lt;stdio.h&gt;</p>
-<p>int main() <br/>{<br/> // 打印一行井号<br/> printf("######\n");</p>
-<p>// 打印一个井号<br/> printf("#\n");</p>
-<p>// 打印一个井号<br/> printf("#\n");</p>
-<p>// 打印一行井号<br/> printf("#####\n");</p>
-<p>// 打印一个井号<br/> printf("#\n");</p>
-<p>// 打印一个井号<br/> printf("#\n");</p>
-<p>// 打印一个井号<br/> printf("#\n");</p>
-<p>return 0;<br/>}</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main(int argc, char** argv) {
+// 检查C标准版本
+#if __STDC_VERSION__ &gt;= 201710L
+printf("我们正在使用 C18 标准!\n");
+#elif __STDC_VERSION__ &gt;= 201112L
+printf("我们正在使用 C11 标准!\n");
+#elif __STDC_VERSION__ &gt;= 199901L
+printf("我们正在使用 C99 标准!\n");
+#else
+printf("我们正在使用 C89/C90 标准!\n");
+#endif
+
+// 表示程序成功执行
+return 0;
+}</pre>
+<p><br/><img alt="" height="65" src="/images/螢幕擷取畫面 2023-12-20 192136.png" width="200"/></p>
+<p></p>
+<p> </p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main()
+{
+// 打印一行井号
+printf("######\n");
+
+// 打印一个井号
+printf("#\n");
+
+// 打印一个井号
+printf("#\n");
+
+// 打印一行井号
+printf("#####\n");
+
+// 打印一个井号
+printf("#\n");
+
+// 打印一个井号
+printf("#\n");
+
+// 打印一个井号
+printf("#\n");
+
+return 0;
+}</pre>
 <p><img alt="" height="130" src="/images/螢幕擷取畫面 2023-12-20 192728.png" width="200"/></p>
 <p></p>
-<p>#include &lt;stdio.h&gt;</p>
-<p>int main() <br/>{<br/> // 声明并初始化字符变量<br/> char char1 = 'X';<br/> char char2 = 'M';<br/> char char3 = 'L';</p>
-<p>// 打印原始和反转顺序的字符<br/> printf("%c%c%c的反转是%c%c%c\n",<br/> char1, char2, char3,<br/> char3, char2, char1);</p>
-<p>return 0;<br/>}</p>
-<p><img alt="" height="44" src="/images/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202023-12-20%20192906.png" width="200"/></p>
 <p></p>
-<p>#include &lt;stdio.h&gt;</p>
-<p>/* <br/> 用于存储矩形宽度和高度的变量（单位：英寸）<br/>*/<br/>int width; <br/>int height;</p>
-<p>int area; /* 用于存储矩形的面积的变量 */<br/>int perimeter; /* 用于存储矩形的周长的变量 */</p>
-<p>int main() {<br/> /* 给高度和宽度赋值 */<br/> height = 7;<br/> width = 5;</p>
-<p>/* 计算矩形的周长 */<br/> perimeter = 2 * (height + width);<br/> printf("矩形的周长 = %d 英寸\n", perimeter);</p>
-<p>/* 计算矩形的面积 */<br/> area = height * width;<br/> printf("矩形的面积 = %d 平方英寸\n", area);</p>
-<p>return 0;<br/>}</p>
-<p><img alt="" height="53" src="/images/螢幕擷取畫面 2023-12-20 193144.png" width="200"/></p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main()
+{
+// 声明并初始化字符变量
+char char1 = 'X';
+char char2 = 'M';
+char char3 = 'L';
+
+// 打印原始和反转顺序的字符
+printf("%c%c%c的反转是%c%c%c\n",
+char1, char2, char3,
+char3, char2, char1);
+
+return 0;
+}</pre>
+<p><br/><img alt="" height="44" src="/images/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202023-12-20%20192906.png" width="200"/></p>
 <p></p>
-<p>#include &lt;stdio.h&gt;</p>
-<p>int main() {<br/> int radius; /* 用于存储圆的半径的变量 */<br/> float area, perimeter; /* 用于存储圆的面积和周长的变量 */ <br/> radius = 6; /* 为半径赋值 */</p>
-<p>/* 计算圆的周长 */<br/> perimeter = 2 * 3.14 * radius;<br/> printf("圆的周长 = %f 英寸\n", perimeter);</p>
-<p>/* 计算圆的面积 */<br/> area = 3.14 * radius * radius;<br/> printf("圆的面积 = %f 平方英寸\n", area);</p>
-<p>return 0;<br/>}</p>
-<p><img alt="" height="45" src="/images/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202023-12-20%20193435.png" width="200"/></p>
 <p></p>
-<p>#include &lt;stdio.h&gt;</p>
-<p>int main()<br/>{<br/> int a = 125, b = 12345; /* 声明并初始化整数变量 */<br/> long ax = 1234567890; /* 声明并初始化长整数变量 */<br/> short s = 4043; /* 声明并初始化短整数变量 */<br/> float x = 2.13459; /* 声明并初始化浮点数变量 */<br/> double dx = 1.1415927; /* 声明并初始化双精度浮点数变量 */<br/> char c = 'W'; /* 声明并初始化字符变量 */<br/> unsigned long ux = 2541567890; /* 声明并初始化无符号长整数变量 */</p>
-<p>/* 不同的算术运算和类型转换 */<br/> printf("a + c = %d\n", a + c);<br/> printf("x + c = %f\n", x + c);<br/> printf("dx + x = %f\n", dx + x);<br/> printf("((int) dx) + ax = %ld\n", ((int) dx) + ax);<br/> printf("a + x = %f\n", a + x);<br/> printf("s + b = %d\n", s + b);<br/> printf("ax + b = %ld\n", ax + b);<br/> printf("s + c = %hd\n", s + c);<br/> printf("ax + c = %ld\n", ax + c);<br/> printf("ax + ux = %lu\n", ax + ux);</p>
-<p>return 0;<br/>}</p>
-<p><img alt="" height="157" src="/images/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202023-12-20%20193651.png" width="200"/></p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+/*
+用于存储矩形宽度和高度的变量（单位：英寸）
+*/
+int width;
+int height;
+
+int area; /* 用于存储矩形的面积的变量 */
+int perimeter; /* 用于存储矩形的周长的变量 */
+
+int main() {
+/* 给高度和宽度赋值 */
+height = 7;
+width = 5;
+
+/* 计算矩形的周长 */
+perimeter = 2 * (height + width);
+printf("矩形的周长 = %d 英寸\n", perimeter);
+
+/* 计算矩形的面积 */
+area = height * width;
+printf("矩形的面积 = %d 平方英寸\n", area);
+
+return 0;
+}</pre>
+<p><br/><img alt="" height="53" src="/images/螢幕擷取畫面 2023-12-20 193144.png" width="200"/></p>
 <p></p>
-<p>#include &lt;stdio.h&gt;</p>
-<p>int main()<br/>{<br/> int days, years, weeks;</p>
-<p>days = 1329; // 总天数</p>
-<p>// 将天数转换为年、周和天<br/> years = days / 365; // 计算年<br/> weeks = (days % 365) / 7; // 计算周<br/> days = days - ((years * 365) + (weeks * 7)); // 计算剩余天数</p>
-<p>// 打印结果<br/> printf("年: %d\n", years);<br/> printf("周: %d\n", weeks);<br/> printf("天: %d \n", days);</p>
-<p>return 0;<br/>}</p>
-<p><img alt="" height="90" src="/images/螢幕擷取畫面 2023-12-21 005615.png" width="200"/></p>
 <p></p>
-<p>#include &lt;stdio.h&gt;</p>
-<p>int main() <br/>{<br/> int x, y, sum; // 声明变量，用于存储两个整数及它们的和</p>
-<p>// 提示用户输入，并将其存储在 'x' 中<br/> printf("\n输入第一个整数："); <br/> scanf("%d", &amp;x);</p>
-<p>// 提示用户输入，并将其存储在 'y' 中<br/> printf("\n输入第二个整数：");<br/> scanf("%d", &amp;y);</p>
-<p>sum = x + y; // 计算 'x' 和 'y' 的和</p>
-<p>// 打印和<br/> printf("\n上述两个整数的和 = %d\n", sum);</p>
-<p>return 0; // 表示程序成功执行<br/>}</p>
-<p><img alt="" height="76" src="/images/螢幕擷取畫面 2023-12-21 033217.png" width="200"/></p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main() {
+int radius; /* 用于存储圆的半径的变量 */
+float area, perimeter; /* 用于存储圆的面积和周长的变量 */
+radius = 6; /* 为半径赋值 */
+
+/* 计算圆的周长 */
+perimeter = 2 * 3.14 * radius;
+printf("圆的周长 = %f 英寸\n", perimeter);
+
+/* 计算圆的面积 */
+area = 3.14 * radius * radius;
+printf("圆的面积 = %f 平方英寸\n", area);
+
+return 0;
+}</pre>
+<p><br/><img alt="" height="45" src="/images/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202023-12-20%20193435.png" width="200"/></p>
+<p></p>
+<p></p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main()
+{
+int a = 125, b = 12345; /* 声明并初始化整数变量 */
+long ax = 1234567890; /* 声明并初始化长整数变量 */
+short s = 4043; /* 声明并初始化短整数变量 */
+float x = 2.13459; /* 声明并初始化浮点数变量 */
+double dx = 1.1415927; /* 声明并初始化双精度浮点数变量 */
+char c = 'W'; /* 声明并初始化字符变量 */
+unsigned long ux = 2541567890; /* 声明并初始化无符号长整数变量 */
+
+/* 不同的算术运算和类型转换 */
+printf("a + c = %d\n", a + c);
+printf("x + c = %f\n", x + c);
+printf("dx + x = %f\n", dx + x);
+printf("((int) dx) + ax = %ld\n", ((int) dx) + ax);
+printf("a + x = %f\n", a + x);
+printf("s + b = %d\n", s + b);
+printf("ax + b = %ld\n", ax + b);
+printf("s + c = %hd\n", s + c);
+printf("ax + c = %ld\n", ax + c);
+printf("ax + ux = %lu\n", ax + ux);
+
+return 0;
+}</pre>
+<p><br/><img alt="" height="157" src="/images/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202023-12-20%20193651.png" width="200"/></p>
+<p></p>
+<p></p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main()
+{
+int days, years, weeks;
+
+days = 1329; // 总天数
+
+// 将天数转换为年、周和天
+years = days / 365; // 计算年
+weeks = (days % 365) / 7; // 计算周
+days = days - ((years * 365) + (weeks * 7)); // 计算剩余天数
+
+// 打印结果
+printf("年: %d\n", years);
+printf("周: %d\n", weeks);
+printf("天: %d \n", days);
+
+return 0;
+}</pre>
+<p><br/><img alt="" height="90" src="/images/螢幕擷取畫面 2023-12-21 005615.png" width="200"/></p>
+<p></p>
+<p></p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main()
+{
+int x, y, sum; // 声明变量，用于存储两个整数及它们的和
+
+// 提示用户输入，并将其存储在 'x' 中
+printf("\n输入第一个整数：");
+scanf("%d", &amp;x);
+
+// 提示用户输入，并将其存储在 'y' 中
+printf("\n输入第二个整数：");
+scanf("%d", &amp;y);
+
+sum = x + y; // 计算 'x' 和 'y' 的和
+
+// 打印和
+printf("\n上述两个整数的和 = %d\n", sum);
+
+return 0; // 表示程序成功执行
+}</pre>
+<p><br/><img alt="" height="76" src="/images/螢幕擷取畫面 2023-12-21 033217.png" width="200"/></p>
 <p> </p>
-<p>#include &lt;stdio.h&gt;</p>
-<p>int main() <br/>{<br/> int x, y, result; // 声明变量，用于存储两个整数及它们的乘积</p>
-<p>// 提示用户输入，并将其存储在 'x' 中<br/> printf("\n输入第一个整数："); <br/> scanf("%d", &amp;x);</p>
-<p>// 提示用户输入，并将其存储在 'y' 中<br/> printf("\n输入第二个整数：");<br/> scanf("%d", &amp;y);</p>
-<p>result = x * y; // 计算 'x' 和 'y' 的乘积</p>
-<p>// 打印乘积<br/> printf("上述两个整数的乘积 = %d\n", result);</p>
-<p>return 0; // 表示程序成功执行<br/>}</p>
-<p><img alt="" height="80" src="/images/螢幕擷取畫面 2023-12-21 033530.png" width="200"/></p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main()
+{
+int x, y, result; // 声明变量，用于存储两个整数及它们的乘积
+
+// 提示用户输入，并将其存储在 'x' 中
+printf("\n输入第一个整数：");
+scanf("%d", &amp;x);
+
+// 提示用户输入，并将其存储在 'y' 中
+printf("\n输入第二个整数：");
+scanf("%d", &amp;y);
+
+result = x * y; // 计算 'x' 和 'y' 的乘积
+
+// 打印乘积
+printf("上述两个整数的乘积 = %d\n", result);
+
+return 0; // 表示程序成功执行
+}
+
+</pre>
+<p><br/><img alt="" height="80" src="/images/螢幕擷取畫面 2023-12-21 033530.png" width="200"/></p>
 <p></p>
 <h1>W15</h1>
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
@@ -1956,7 +2106,108 @@ int main() {
     return 0;
 }</pre>
 <code class="html plain"><br/></code></div>
-<div class="line number61 index60 alt2"><code class="html plain"><img alt="" height="300" src="/images/1233.png" width="400"/></code></div><h1>Brython</h1>
+<div class="line number61 index60 alt2"><code class="html plain"><img alt="" height="300" src="/images/1233.png" width="400"/></code></div>
+<div class="line number61 index60 alt2"><code class="html plain"></code></div>
+<div class="line number61 index60 alt2"><code class="html plain"></code></div>
+<h1>教學影片</h1>
+<h2>【1.電腦輔助設計室網路設定說明】</h2>
+<p><strong><span>(1)手動設定，所以關閉自動偵測設定</span></strong></p>
+<p><strong><span><img alt="" height="455" src="/images/1.PNG" width="800"/></span></strong></p>
+<p><strong><span>(2)手動設定IP位置</span></strong></p>
+<p><strong><span><img alt="" height="453" src="/images/2.PNG" width="800"/></span></strong></p>
+<p><strong><span>(3)在近端(電腦輔助設計教室)</span></strong></p>
+<p><strong><span><img alt="" height="453" src="/images/3.PNG" width="800"/></span></strong></p>
+<p><strong><span>(4)搜尋控制台</span></strong></p>
+<p><strong><span><img alt="" height="452" src="/images/4.PNG" width="800"/></span></strong></p>
+<p><strong><span>(5)框框虛擬 打勾實體</span></strong></p>
+<p><strong><span><img alt="" height="457" src="/images/5.PNG" width="800"/></span></strong></p>
+<p><strong><span>(6)關閉IPV4</span></strong></p>
+<p><strong><span><img alt="" height="455" src="/images/6.PNG" width="800"/></span></strong></p>
+<p><strong><span>(7)開啟IPV6</span></strong></p>
+<p><strong><span><img alt="" height="453" src="/images/7.PNG" width="800"/></span></strong></p>
+<p><strong><span>(8)設定DNS</span></strong></p>
+<p><strong><span><img alt="" height="453" src="/images/8.PNG" width="800"/></span></strong></p>
+<p><strong><span>(9)利用隨身碟批次檔案 設定網路環境</span></strong></p>
+<p><strong><span><img alt="" height="455" src="/images/9.PNG" width="800"/></span></strong></p>
+<p><strong><span>(10)放入對應檔案</span></strong></p>
+<p><strong><span><img alt="" height="453" src="/images/10.PNG" width="800"/></span></strong></p>
+<p><strong><span>(11)關閉IPV4 開啟IPV6</span></strong></p>
+<p><strong><span><img alt="" height="451" src="/images/11.PNG" width="800"/></span></strong></p><h2>【2. Wink 網路設定】</h2>
+<p><strong><span>(1)</span></strong></p>
+<p><strong><span><img alt="" height="497" src="/images/2-1.PNG" width="800"/></span></strong></p>
+<p><strong><span>(2)</span></strong></p>
+<p><strong><span><img alt="" height="498" src="/images/2-2.PNG" width="800"/></span></strong></p>
+<p><strong><span>(3)</span></strong></p>
+<p><strong><span><img alt="" height="496" src="/images/2-3.PNG" width="800"/></span></strong></p>
+<p><strong><span>(4)</span></strong></p>
+<p><strong><span><img alt="" height="454" src="/images/2-4.PNG" width="800"/></span></strong></p>
+<p><strong><span>(5)</span></strong></p>
+<p><strong><span><img alt="" height="455" src="/images/2-5.PNG" width="800"/></span></strong></p>
+<p><strong><span>(6)</span></strong></p>
+<p><strong><span><img alt="" height="453" src="/images/2-6.PNG" width="800"/></span></strong></p>
+<p><strong><span>(7)</span></strong></p>
+<p><strong><span><img alt="" height="439" src="/images/2-7.PNG" width="800"/></span></strong></p>
+<p><strong><span>(8)</span></strong></p>
+<p><strong><span><img alt="" height="465" src="/images/2-8.PNG" width="800"/></span></strong></p>
+<p><strong><span>(9)</span></strong></p>
+<p><strong><span><img alt="" height="503" src="/images/2-9.PNG" width="800"/></span></strong></p>
+<h2>【4. 安裝與課程相關的 Apps, 網路設定與 ChatGPT 應用】</h2>
+<p>(1)手機安裝Apps:ChatGPT, Github mobile, Replit, Authy, Teams, Onshape</p>
+<p>(2)有技巧詢問ChatGPT</p>
+<p>手機上的 Github mobile App 可用於 Github 帳號中的 2FA 流程, 幫助 Github 阻絕不當的 robot 濫用.<br/>Replit App 利用手機 Run 倉儲網站, 並以手機或平板瀏覽器管理較少量的網站編輯.<br/>Authy App 允許使用者利用手機或數位手錶取得 2FA 登入流程所需的 verification code.<br/>Teams App 利用手機參與 Microsoft 線上團隊課程.<br/>Onshape App 則可讓使用者利用手機或平面檢視或修改協同產品設計流程中的零組件.</p>
+<p>(3)在命令搜尋區輸入 cmd (command 命令提示字元), 後利用 ipconfig /all 指令取得目前的網路設定.</p>
+<p>2001開始的為外部IP.</p>
+<p>f180為內部.</p>
+<p>192.168.1為內部IPv4.</p>
+<p>利用【自動】取的IP位置可減少網路重疊.</p>
+<p>140.130.1為學校網段.</p>
+<p></p>
+<p>(4)Q:為甚麼會有兩個冒號?</p>
+<p>    A:因為總共有8個區段，中間有4個區段為0.</p>
+<p></p>
+<p>(5)Q:出現防火牆把網路關閉?</p>
+<p>     A:因為電腦中有軟體有問題被防毒軟體誤會要入侵系統才會把網路關閉</p>
+<h2>【5. 可攜程式環境的設定說明, 如何在可攜環境中編譯執行 C 程式】</h2>
+<p><span>(1)這門課的可攜環境，雙點擊可以在近端啟動可攜程式環境.</span></p>
+<p><span><img alt="" height="358" src="/images/5-1.PNG" width="800"/></span></p>
+<p><span>(2)開啟(必須在檢視-顯示項目下勾選"副檔名"與"隱藏的項目").</span></p>
+<p><span><img alt="" height="631" src="/images/5-2.PNG" width="800"/></span></p>
+<p><strong><span>(3)會跳出4個命令</span></strong></p>
+<p><strong><span><img alt="" height="139" src="/images/5-3.PNG" width="764"/></span></strong></p>
+<p><strong><span>(4)</span></strong></p>
+<p><strong><span><img alt="" height="554" src="/images/5-4.PNG" width="800"/></span></strong></p>
+<p><strong><span>(5)</span></strong></p>
+<p><strong><span><img alt="" height="655" src="/images/5-5.PNG" width="590"/></span></strong></p>
+<p><strong><span>(6)用 SciTE 編輯器中的 Tools - Go 功能表執行 ANSI C 程式</span></strong></p>
+<p><strong><span><img alt="" height="459" src="/images/5-6.PNG" width="800"/></span></strong></p>
+<p><strong><span> <span>(7)10次hello world</span></span></strong></p>
+<p><strong><span><span><img alt="" height="545" src="/images/5-7.PNG" width="800"/></span></span></strong></p>
+<p><strong><span>(8)清除output</span></strong></p>
+<p><strong><span><img alt="" height="541" src="/images/5-8.PNG" width="800"/></span></strong></p>
+<h2>【9. Github 倉儲設定 Pages 靜態網站】</h2>
+<p><strong><span>(1)利用主分支建立網頁:Source來源/Branch分支/main主分支</span></strong></p>
+<p><strong><span><img alt="" height="420" src="/images/9.1.PNG" width="800"/></span></strong></p>
+<p><strong><span>(2)網頁根目錄</span></strong></p>
+<p><strong><span><img alt="" height="419" src="/images/9.2.PNG" width="800"/></span></strong></p>
+<p><strong><span>(3)mdecp2023.github.io/倉儲名稱</span></strong></p>
+<p><strong><span></span></strong></p>
+<p><strong><span></span></strong></p>
+<p><strong><span></span></strong></p>
+<p><strong><span></span></strong></p>
+<p><strong><span></span></strong></p>
+<p><strong><span></span></strong></p>
+<p><strong><span></span></strong></p>
+<p><strong><span></span></strong></p>
+<p><strong><span></span></strong></p>
+<p><strong><span></span></strong></p>
+<p><strong><span></span></strong></p>
+<p><strong><span></span></strong></p>
+<p><strong><span></span></strong></p>
+<p><strong><span></span></strong></p>
+<p><strong><span></span></strong></p>
+<p><strong><span></span></strong></p>
+<p><strong><span></span></strong></p>
+<p></p><h1>Brython</h1>
 <p><a href="https://en.wikipedia.org/wiki/Python_(programming_language)">https://en.wikipedia.org/wiki/Python_(programming_language)</a></p>
 <h4>Examples:</h4>
 <p style="padding-left: 30px;"><a href="https://gist.github.com/mdecycu/d9082d678096bd58378d6afe2c7fa05d">https://gist.github.com/mdecycu/d9082d678096bd58378d6afe2c7fa05d</a></p>
