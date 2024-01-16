@@ -142,98 +142,276 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">中華民國國旗程式 << <a href='中華民國國旗程式.html'>Previous</a> <a href='W7.html'>Next</a> >> W7<br /><h1>美國國旗程式</h1>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
-#include &lt;gd.h&gt;
-#include &lt;math.h&gt;
+    <div id="tipue_search_content">Exercises << <a href='Exercises.html'>Previous</a> <a href='W12.html'>Next</a> >> W12<br /><h1>練習二</h1>
+<p>1.<span>，這個程式接收使用者輸入的一個字符，然後將該字符顯示出來。使用 </span><code>getchar()</code><span> 來讀取輸入的字符，並使用 </span><code>putchar()</code><span> 來輸出該字符。這個程式特別適合用來演示基本的字符輸入和輸出。</span></p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 
-void draw_usa_flag(gdImagePtr img);
-void draw_star(gdImagePtr img, int x, int y, int size, int color, double rotation_angle);
-
+/* 读取和显示一个字符 */
 int main() {
-int width = 800;
-int height = (int)(width / 1.9);
+char c;
 
-gdImagePtr img = gdImageCreateTrueColor(width, height);
-gdImageAlphaBlending(img, 0);
+printf("请输入一个字符： ");
+c = getchar(); /* 读取输入的字符 */
 
-draw_usa_flag(img);
+printf("输入的字符是： ");
+putchar(c); /* 输出字符 */
 
-FILE *outputFile = fopen("./../images/usa_flag.png", "wb");
-if (outputFile == NULL) {
-fprintf(stderr, "打开输出文件时出错。\n");
-return 1;
+return 0;
+}</pre>
+<p></p>
+<p><img alt="" height="44" src="./../images/螢幕擷取畫面 2023-12-21 043156.png" width="300"/></p>
+<p></p>
+<p>2.<span>這個程式接收使用者輸入的兩個整數，計算它們的總和，然後顯示結果。使用 </span><code>scanf</code><span> 來讀取輸入的整數，並使用 </span><code>printf</code><span> 來顯示結果。</span></p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+
+/* 读取两个整数，计算它们的总和并打印结果 */
+int main()
+{
+int this_is_a_number1, this_is_a_number2, total;
+
+printf("请输入一个整数：\n ");
+scanf("%d", &amp;this_is_a_number1); /* 读取输入的整数 */
+printf("你输入了 %d\n", this_is_a_number1);
+
+printf("请输入另一个整数：\n ");
+scanf("%d", &amp;this_is_a_number2); /* 读取输入的整数 */
+printf("你输入了 %d\n", this_is_a_number2);
+
+total = this_is_a_number1 + this_is_a_number2; /* 计算两个整数的总和 */
+printf("总和为 %d\n", total);
+
+return 0;
+}</pre>
+<p></p>
+<p><img caption="false" height="368" src="./../images/螢幕擷取畫面 2023-12-21 044517.png" width="500"/></p>
+<p></p>
+<p>3.<span>這個程式接收使用者輸入的兩個浮點數，計算它們的總和，然後顯示結果。使用 </span><code>scanf</code><span> 來讀取輸入的浮點數，並使用 </span><code>printf</code><span> 來顯示結果。</span></p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+
+/* 读取两个浮点数，计算它们的总和并打印结果 */
+int main()
+{
+float this_is_a_number1, this_is_a_number2, total;
+
+printf("请输入一个小数：\n ");
+scanf("%f", &amp;this_is_a_number1); /* 读取输入的浮点数 */
+printf("你输入了 %f\n", this_is_a_number1);
+
+printf("请输入另一个小数：\n ");
+scanf("%f", &amp;this_is_a_number2); /* 读取输入的浮点数 */
+printf("你输入了 %f\n", this_is_a_number2);
+
+total = this_is_a_number1 + this_is_a_number2; /* 计算两个浮点数的总和 */
+printf("总和为 %f\n", total);
+
+return 0;
+}
+</pre>
+<p><br/><img caption="false" height="237" src="./../images/螢幕擷取畫面 2023-12-21 043225.png" width="500"/></p>
+<p></p>
+<p>4.<span>這個程式接收使用者輸入的兩個浮點數，計算它們的乘積，然後顯示結果。使用 </span><code>scanf</code><span> 來讀取輸入的浮點數，並使用 </span><code>printf</code><span> 來顯示結果。</span></p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+
+/* 读取两个浮点数，计算它们的乘积并打印结果 */
+int main()
+{
+float this_is_a_number1, this_is_a_number2, total;
+
+printf("请输入一个小数：\n ");
+scanf("%f", &amp;this_is_a_number1); /* 读取输入的浮点数 */
+printf("你输入了 %f\n", this_is_a_number1);
+
+printf("请输入另一个小数：\n ");
+scanf("%f", &amp;this_is_a_number2); /* 读取输入的浮点数 */
+printf("你输入了 %f\n", this_is_a_number2);
+
+total = this_is_a_number1 * this_is_a_number2; /* 计算两个浮点数的乘积 */
+printf("乘积为 %f\n", total);
+
+return 0;
+}</pre>
+<p><br/><img alt="" height="202" src="./../images/螢幕擷取畫面 2023-12-21 043239.png" width="500"/></p>
+<p></p>
+<p>5.<span>這個程式接收使用者輸入的兩個浮點數，計算它們的商，然後顯示結果。使用 </span><code>scanf</code><span> 來讀取輸入的浮點數，並使用 </span><code>printf</code><span> 來顯示結果。</span></p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+
+/* 除法：计算两个浮点数的商 */
+int main()
+{
+float this_is_a_number1, this_is_a_number2, total;
+
+printf("请输入一个数字：\n");
+scanf("%f", &amp;this_is_a_number1); /* 读取输入的数字 */
+printf("你输入了 %f\n", this_is_a_number1);
+
+printf("请输入另一个数字：\n");
+scanf("%f", &amp;this_is_a_number2); /* 读取输入的数字 */
+printf("你输入了 %f\n", this_is_a_number2);
+
+total = this_is_a_number1 / this_is_a_number2; /* 计算两个数字的商 */
+printf("商为 %f\n", total);
+
+return 0;
+}</pre>
+<p><br/><img alt="" height="207" src="./../images/螢幕擷取畫面 2023-12-21 043257.png" width="500"/></p>
+<p></p>
+<p>6.<span>這個程式使用 </span><code>for</code><span> 循環計算了使用者輸入的十個浮點數的總和。程式通過 </span><code>scanf</code><span> 函式讀取輸入，並使用 </span><code>printf</code><span> 函式顯示計算結果。</span></p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">##define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+
+/* 演示 for 循环：计算用户输入的十个浮点数的总和 */
+int main()
+{
+float this_is_a_number, total;
+int i;
+
+total = 0;
+
+/* for 循环执行 10 次 */
+for (i = 0; i &lt; 10; i++)
+{
+printf("请输入一个数字：\n");
+scanf("%f", &amp;this_is_a_number); /* 读取输入的数字 */
+total = total + this_is_a_number;
 }
 
-gdImagePngEx(img, outputFile, 9);
-fclose(outputFile);
-gdImageDestroy(img);
+printf("总和为：%f\n", total);
 
 return 0;
 }
 
-void draw_usa_flag(gdImagePtr img) {
-int width = gdImageSX(img);
-int height = gdImageSY(img);
-int red, white, blue;
-// 国旗颜色
-red = gdImageColorAllocate(img, 178, 34, 52); // 红色条纹
-white = gdImageColorAllocate(img, 255, 255, 255); // 白色条纹
-blue = gdImageColorAllocate(img, 60, 59, 110); // 蓝色矩形
+</pre>
+<p><br/><img caption="false" height="288" src="./../images/螢幕擷取畫面 2023-12-21 043356.png" width="500"/></p>
+<p></p>
+<p>7.<span>這個程式演示了嵌套的 </span><code>for</code><span> 循環，計算了使用者輸入的二維數組（10行2列）的總和。程式通過 </span><code>scanf</code><span> 函式讀取輸入，並使用 </span><code>printf</code><span> 函式顯示計算結果。</span></p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
 
-int stripe_height = height / 13;
-int stripe_width = width;
-int star_size = (int)(0.0308 * height); // 星星大小
+/* 演示嵌套的 for 循环：计算用户输入的二维数组（10行2列）的总和 */
+int main()
+{
+float this_is_a_number, total;
+int i, j;
 
-for (int y = 0; y &lt; height; y += stripe_height) {
-if (y / stripe_height % 2 == 0) {
-gdImageFilledRectangle(img, 0, y, stripe_width, y + stripe_height, red);
-} else {
-gdImageFilledRectangle(img, 0, y, stripe_width, y + stripe_height, white);
+total = 0;
+
+/* 外部 for 循环执行 10 次 */
+for (i = 0; i &lt; 10; i++)
+{
+/* 内部 for 循环执行 2 次 */
+for (j = 0; j &lt; 2; j++)
+{
+printf("请输入一个数字：\n");
+scanf("%f", &amp;this_is_a_number); /* 读取输入的数字 */
+total = total + this_is_a_number;
 }
 }
 
-gdImageFilledRectangle(img, 0, 0, width * 2 / 5, stripe_height * 7, blue);
+printf("总和为：%f\n", total);
 
-int star_spacing_x = (int)(0.129 * height); // 横向星星之间的间距
-int star_spacing_y = (int)(0.054 * height); // 纵向星星之间的间距
-int star_start_x = (int)(0.125 * height); // 星星的起始X位置
-int star_start_y = (int)(0.0485 * height); // 星星的起始Y位置
-
-for (int row = 0; row &lt; 9; row++) {
-int starsPerRow = (row % 2 == 0) ? 6 : 5;
-
-// 计算2、4、6和8排星星的偏移量
-int offset_x = (row % 2 == 0) ? star_spacing_x / -2 : 0;
-
-for (int star = 0; star &lt; starsPerRow; star++) {
-int x = star_start_x + star * star_spacing_x + offset_x;
-
-// 旋转角度（以弧度为单位）
-double rotation_angle = M_PI / 5; // 忘記多少度的旋转
-
-int y = star_start_y + row * star_spacing_y;
-draw_star(img, x, y, star_size, white, rotation_angle);
-}
-}
-}
-
-void draw_star(gdImagePtr img, int x, int y, int size, int color, double rotation_angle) {
-gdPoint points[10];
-
-for (int i = 0; i &lt; 10; i++) {
-double angle = M_PI / 2 + i * 2 * M_PI / 10 + rotation_angle;
-int radius = (i % 2 == 0) ? size : size / 2;
-points[i].x = x + radius * cos(angle);
-points[i].y = y + radius * sin(angle);
-}
-
-// 用指定的颜色填充星星
-gdImageFilledPolygon(img, points, 10, color);
+return 0;
 }</pre>
-<p><br/><img alt="" height="211" src="./../images/usa_flag.png" width="400"/>  </p>
-<p><video controls="controls" height="630" width="1008">
-<source src="./../images/美國國旗.mp4" type="video/mp4"/></video></p><br />中華民國國旗程式 << <a href='中華民國國旗程式.html'>Previous</a> <a href='W7.html'>Next</a> >> W7</div>
+<p><br/><img caption="false" height="816" src="./../images/螢幕擷取畫面 2023-12-21 043502.png" width="500"/></p>
+<p></p>
+<p>8.<span>這個程式演示了使用 </span><code>do-while</code><span> 循環計算使用者輸入的十個浮點數的總和。程式通過 </span><code>scanf</code><span> 函式讀取輸入，並使用 </span><code>printf</code><span> 函式顯示計算結果。 </span><code>do-while</code><span> 循環確保至少執行一次，即使條件在循環開始時為 false。</span></p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+
+/* 演示 do-while 循环：计算用户输入的十个浮点数的总和 */
+int main()
+{
+float this_is_a_number, total;
+int i;
+
+total = 0;
+i = 0;
+
+/* do-while 循环执行，直到 i 的值达到 10 */
+do
+{
+printf("请输入一个数字：\n");
+scanf("%f", &amp;this_is_a_number); /* 读取输入的数字 */
+total = total + this_is_a_number;
+i++;
+} while (i &lt; 10);
+
+printf("总和为：%f\n", total);
+
+return 0;
+}</pre>
+<p><br/><img alt="" height="558" src="./../images/螢幕擷取畫面 2023-12-21 043532.png" width="500"/></p>
+<p>9.<span>這個程式使用 </span><code>switch</code><span> 语句根据使用者輸入的整數值執行不同的操作。根據 </span><code>this_is_a_number</code><span> 的值，程式會進入相應的 </span><code>case</code><span> 分支或 </span><code>default</code><span> 分支。</span></p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#define _CRT_SECURE_NO_WARNINGS
+#include &lt;stdio.h&gt;
+
+/* switch语句示例：根据用户输入的整数值执行不同的操作 */
+int main()
+{
+int this_is_a_number;
+
+printf("请输入一个介于1和5之间的整数：\n ");
+scanf("%d", &amp;this_is_a_number);
+
+switch (this_is_a_number)
+{
+case 1:
+printf("Case1: 值是：%d", this_is_a_number);
+break;
+case 2:
+printf("Case2: 值是：%d", this_is_a_number);
+break;
+case 3:
+printf("Case3: 值是：%d", this_is_a_number);
+break;
+case 4:
+printf("Case4: 值是：%d", this_is_a_number);
+break;
+case 5:
+printf("Case5: 值是：%d", this_is_a_number);
+break;
+default:
+printf("错误：值是：%d", this_is_a_number); /* 输入的数字不在1和5之间 */
+}
+
+return 0;
+}</pre>
+<p><br/><img alt="" height="585" src="./../images/螢幕擷取畫面 2023-12-21 043548.png" width="500"/></p>
+<p></p>
+<p>10.<span>這個程式使用 </span><code>if</code><span> 和 </span><code>if-else</code><span> 语句根據使用者輸入的整數值執行不同的條件分支。程式根據條件的滿足與否，輸出相應的信息。</span></p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+/* if语句示例：根据用户输入的整数值执行不同的条件分支 */
+int main()
+{
+int this_is_a_number;
+
+printf("请输入一个介于1和10之间的整数：\n ");
+scanf("%d", &amp;this_is_a_number);
+
+if (this_is_a_number &lt; 6)
+{
+printf("这个数字小于6;\n ");
+}
+
+printf("请输入一个介于10和20之间的整数：\n ");
+scanf("%d", &amp;this_is_a_number);
+
+if (this_is_a_number &lt; 16)
+{
+printf("这个数字小于16\n ");
+}
+else
+{
+printf("这个数字大于等于16\n ");
+}
+
+return 0;
+}</pre>
+<p><br/><img caption="false" height="330" src="./../images/螢幕擷取畫面 2023-12-21 043725.png" width="500"/></p><br />Exercises << <a href='Exercises.html'>Previous</a> <a href='W12.html'>Next</a> >> W12</div>
         
     <!-- footer -->
       <div class="container">
