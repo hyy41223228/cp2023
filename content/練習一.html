@@ -2,7 +2,7 @@
         <head>
         <title>cmsite</title>
         <meta charset="utf-8">
-<meta property="head" content="H1">
+<meta property="head" content="H2">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
@@ -142,63 +142,245 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">W12 << <a href='W12.html'>Previous</a> <a href='ANSIC.html'>Next</a> >> ANSIC<br /><h1>W13</h1>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">// 包含標準輸出入程式庫的標頭文件
-#include &lt;stdio.h&gt;
- 
-// 主函式
-int main() {
-    // Open a file to write displacement and velocity data
-    FILE *outputFile = fopen("motion_data.txt", "w");
-    if (!outputFile) {
-        fprintf(stderr, "Failed to create data file.\n");
-        return 1;
-    }
- 
-    // Simulate motion for 10 seconds and calculate displacement and velocity, while writing data to the file
-    double x = 0.2;  // Initial displacement
-    double v = 0.0;  // Initial velocity
-    double dt = 0.01; // Time step
-    double t = 0.0;  // Time
- 
-    while (t &lt;= 10.0) {
-        double acceleration = (-10.0 * x - 0.5 * v) / 1.0; // Modified system parameters here
-        v += acceleration * dt;
-        x += v * dt;
- 
-        fprintf(outputFile, "%lf %lf %lf\n", t, x, v);
- 
-        t += dt;
-    }
- 
-    // Close the data file
-    fclose(outputFile);
- 
-    // Start a Gnuplot process using popen
-    FILE *gnuplotPipe = popen("gnuplot -persistent", "w");
-    if (!gnuplotPipe) {
-        fprintf(stderr, "Failed to start Gnuplot.\n");
-        return 1;
-    }
- 
-    // Use Gnuplot plotting commands, specify font and output as PNG
-    fprintf(gnuplotPipe, "set terminal pngcairo enhanced font 'default,10' size 800,400\n");
-    fprintf(gnuplotPipe, "set output './../images/motion_plot.png'\n");
-    fprintf(gnuplotPipe, "set title 'Displacement and Velocity vs. Time'\n");
-    fprintf(gnuplotPipe, "set xlabel 'Time (s)'\n");
-    fprintf(gnuplotPipe, "set ylabel 'Displacement (m)'\n");
-    fprintf(gnuplotPipe, "plot 'motion_data.txt' using 1:2 with lines lw 2 title 'Displacement', \
-                             'motion_data.txt' using 1:3 with lines lw 2 title 'Velocity'\n");
- 
-    // Close the Gnuplot process
-    fprintf(gnuplotPipe, "exit\n");
-    pclose(gnuplotPipe);
- 
+    <div id="tipue_search_content">ANSIC << <a href='ANSIC.html'>Previous</a> <a href='上課內容.html'>Next</a> >> 上課內容<br /><h1>練習一</h1>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main(int argc, char** argv) {
+    // 检查C标准版本
+    #if __STDC_VERSION__ &gt;=  201710L
+        printf("我们正在使用 C18 标准!\n");
+    #elif __STDC_VERSION__ &gt;= 201112L
+        printf("我们正在使用 C11 标准!\n");
+    #elif __STDC_VERSION__ &gt;= 199901L
+        printf("我们正在使用 C99 标准!\n");
+    #else
+        printf("我们正在使用 C89/C90 标准!\n");
+    #endif
+
+    // 表示程序成功执行
     return 0;
+}
+</pre>
+<p><img alt="" height="122" src="./../images/螢幕擷取畫面 2023-12-20 191959.png" width="200"/><br/><br/></p>
+<p></p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main(int argc, char** argv) {
+// 检查C标准版本
+#if __STDC_VERSION__ &gt;= 201710L
+printf("我们正在使用 C18 标准!\n");
+#elif __STDC_VERSION__ &gt;= 201112L
+printf("我们正在使用 C11 标准!\n");
+#elif __STDC_VERSION__ &gt;= 199901L
+printf("我们正在使用 C99 标准!\n");
+#else
+printf("我们正在使用 C89/C90 标准!\n");
+#endif
+
+// 表示程序成功执行
+return 0;
 }</pre>
-<p><img alt="" height="200" src="./../images/motion_plot.png" width="400"/></p>
-<p><video controls="controls" height="630" width="1008">
-<source src="./../images/彈簧影片.mp4" type="video/mp4"/></video></p><br />W12 << <a href='W12.html'>Previous</a> <a href='ANSIC.html'>Next</a> >> ANSIC</div>
+<p><br/><img alt="" height="65" src="./../images/螢幕擷取畫面 2023-12-20 192136.png" width="200"/></p>
+<p></p>
+<p> </p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main()
+{
+// 打印一行井号
+printf("######\n");
+
+// 打印一个井号
+printf("#\n");
+
+// 打印一个井号
+printf("#\n");
+
+// 打印一行井号
+printf("#####\n");
+
+// 打印一个井号
+printf("#\n");
+
+// 打印一个井号
+printf("#\n");
+
+// 打印一个井号
+printf("#\n");
+
+return 0;
+}</pre>
+<p><img alt="" height="130" src="./../images/螢幕擷取畫面 2023-12-20 192728.png" width="200"/></p>
+<p></p>
+<p></p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main()
+{
+// 声明并初始化字符变量
+char char1 = 'X';
+char char2 = 'M';
+char char3 = 'L';
+
+// 打印原始和反转顺序的字符
+printf("%c%c%c的反转是%c%c%c\n",
+char1, char2, char3,
+char3, char2, char1);
+
+return 0;
+}</pre>
+<p><br/><img alt="" height="44" src="./../images/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202023-12-20%20192906.png" width="200"/></p>
+<p></p>
+<p></p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+/*
+用于存储矩形宽度和高度的变量（单位：英寸）
+*/
+int width;
+int height;
+
+int area; /* 用于存储矩形的面积的变量 */
+int perimeter; /* 用于存储矩形的周长的变量 */
+
+int main() {
+/* 给高度和宽度赋值 */
+height = 7;
+width = 5;
+
+/* 计算矩形的周长 */
+perimeter = 2 * (height + width);
+printf("矩形的周长 = %d 英寸\n", perimeter);
+
+/* 计算矩形的面积 */
+area = height * width;
+printf("矩形的面积 = %d 平方英寸\n", area);
+
+return 0;
+}</pre>
+<p><br/><img alt="" height="53" src="./../images/螢幕擷取畫面 2023-12-20 193144.png" width="200"/></p>
+<p></p>
+<p></p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main() {
+int radius; /* 用于存储圆的半径的变量 */
+float area, perimeter; /* 用于存储圆的面积和周长的变量 */
+radius = 6; /* 为半径赋值 */
+
+/* 计算圆的周长 */
+perimeter = 2 * 3.14 * radius;
+printf("圆的周长 = %f 英寸\n", perimeter);
+
+/* 计算圆的面积 */
+area = 3.14 * radius * radius;
+printf("圆的面积 = %f 平方英寸\n", area);
+
+return 0;
+}</pre>
+<p><br/><img alt="" height="45" src="./../images/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202023-12-20%20193435.png" width="200"/></p>
+<p></p>
+<p></p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main()
+{
+int a = 125, b = 12345; /* 声明并初始化整数变量 */
+long ax = 1234567890; /* 声明并初始化长整数变量 */
+short s = 4043; /* 声明并初始化短整数变量 */
+float x = 2.13459; /* 声明并初始化浮点数变量 */
+double dx = 1.1415927; /* 声明并初始化双精度浮点数变量 */
+char c = 'W'; /* 声明并初始化字符变量 */
+unsigned long ux = 2541567890; /* 声明并初始化无符号长整数变量 */
+
+/* 不同的算术运算和类型转换 */
+printf("a + c = %d\n", a + c);
+printf("x + c = %f\n", x + c);
+printf("dx + x = %f\n", dx + x);
+printf("((int) dx) + ax = %ld\n", ((int) dx) + ax);
+printf("a + x = %f\n", a + x);
+printf("s + b = %d\n", s + b);
+printf("ax + b = %ld\n", ax + b);
+printf("s + c = %hd\n", s + c);
+printf("ax + c = %ld\n", ax + c);
+printf("ax + ux = %lu\n", ax + ux);
+
+return 0;
+}</pre>
+<p><br/><img alt="" height="157" src="./../images/%E8%9E%A2%E5%B9%95%E6%93%B7%E5%8F%96%E7%95%AB%E9%9D%A2%202023-12-20%20193651.png" width="200"/></p>
+<p></p>
+<p></p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main()
+{
+int days, years, weeks;
+
+days = 1329; // 总天数
+
+// 将天数转换为年、周和天
+years = days / 365; // 计算年
+weeks = (days % 365) / 7; // 计算周
+days = days - ((years * 365) + (weeks * 7)); // 计算剩余天数
+
+// 打印结果
+printf("年: %d\n", years);
+printf("周: %d\n", weeks);
+printf("天: %d \n", days);
+
+return 0;
+}</pre>
+<p><br/><img alt="" height="90" src="./../images/螢幕擷取畫面 2023-12-21 005615.png" width="200"/></p>
+<p></p>
+<p></p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main()
+{
+int x, y, sum; // 声明变量，用于存储两个整数及它们的和
+
+// 提示用户输入，并将其存储在 'x' 中
+printf("\n输入第一个整数：");
+scanf("%d", &amp;x);
+
+// 提示用户输入，并将其存储在 'y' 中
+printf("\n输入第二个整数：");
+scanf("%d", &amp;y);
+
+sum = x + y; // 计算 'x' 和 'y' 的和
+
+// 打印和
+printf("\n上述两个整数的和 = %d\n", sum);
+
+return 0; // 表示程序成功执行
+}</pre>
+<p><br/><img alt="" height="76" src="./../images/螢幕擷取畫面 2023-12-21 033217.png" width="200"/></p>
+<p> </p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main()
+{
+int x, y, result; // 声明变量，用于存储两个整数及它们的乘积
+
+// 提示用户输入，并将其存储在 'x' 中
+printf("\n输入第一个整数：");
+scanf("%d", &amp;x);
+
+// 提示用户输入，并将其存储在 'y' 中
+printf("\n输入第二个整数：");
+scanf("%d", &amp;y);
+
+result = x * y; // 计算 'x' 和 'y' 的乘积
+
+// 打印乘积
+printf("上述两个整数的乘积 = %d\n", result);
+
+return 0; // 表示程序成功执行
+}
+
+</pre>
+<p><br/><img alt="" height="80" src="./../images/螢幕擷取畫面 2023-12-21 033530.png" width="200"/></p>
+<br />ANSIC << <a href='ANSIC.html'>Previous</a> <a href='上課內容.html'>Next</a> >> 上課內容</div>
         
     <!-- footer -->
       <div class="container">
