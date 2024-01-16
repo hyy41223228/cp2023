@@ -49,8 +49,9 @@ int main() {
 <p><br/><img alt="" height="200" src="/images/gnuplot_ex1.png" width="400"/></p>
 <p></p>
 <p><video controls="controls" height="630" width="1008">
-<source src="/imges/W5 sin函數.mp4" type="video/mp4"/></video></p>
-<p></p><h1>W6</h1>
+<source src="/images/W5 sin函數.mp4" type="video/mp4"/></video></p>
+<p></p>
+<h1>W6</h1>
 <h2>中華民國國旗程式</h2>
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 #include &lt;gd.h&gt;
@@ -137,7 +138,8 @@ gdImageFilledEllipse(img, center_x, center_y, sun_radius * 1.1, sun_radius * 1.1
 }</pre>
 <p><br/><img alt="" height="267" src="/images/roc_flag.png" width="400"/></p>
 <p><video controls="controls" height="630" width="1008">
-<source src="/images/台灣國旗.mp4" type="video/mp4"/></video></p><h2>美國國旗程式</h2>
+<source src="/images/台灣國旗.mp4" type="video/mp4"/></video></p>
+<h2>美國國旗程式</h2>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 #include &lt;gd.h&gt;
 #include &lt;math.h&gt;
@@ -228,7 +230,8 @@ gdImageFilledPolygon(img, points, 10, color);
 }</pre>
 <p><br/><img alt="" height="211" src="/images/usa_flag.png" width="400"/>  </p>
 <p><video controls="controls" height="630" width="1008">
-<source src="/images/美國國旗.mp4" type="video/mp4"/></video></p><h1>W7</h1>
+<source src="/images/美國國旗.mp4" type="video/mp4"/></video></p>
+<h1>W7</h1>
 <h2>中國國旗程式</h2>
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 #include &lt;gd.h&gt;
@@ -317,7 +320,8 @@ void draw_star(gdImagePtr img, int x, int y, int size, int color, double rotatio
 <p><video controls="controls" height="630" width="1008">
 <source src="/images/中國國旗.mp4" type="video/mp4"/></video></p>
 <p></p>
-<p></p><h2>日本國旗程式</h2>
+<p></p>
+<h2>日本國旗程式</h2>
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 #include &lt;gd.h&gt;
 #include &lt;math.h&gt;
@@ -368,7 +372,8 @@ void draw_japan_flag(gdImagePtr img) {
 }</pre>
 <p><img alt="" height="267" src="/images/japan_flag.png" width="400"/></p>
 <p><video controls="controls" height="630" width="1008">
-<source src="/images/日本國旗.mp4" type="video/mp4"/></video></p><h2>英國國旗程式</h2>
+<source src="/images/日本國旗.mp4" type="video/mp4"/></video></p>
+<h2>英國國旗程式</h2>
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 #include &lt;gd.h&gt;
 #include &lt;math.h&gt;
@@ -510,369 +515,162 @@ void draw_uk_flag(gdImagePtr img) {
 <p><img alt="" height="200" src="/images/uk_flag.png" width="400"/></p>
 <p><video controls="controls" height="630" width="1008">
 <source src="/images/英國國旗.mp4" type="video/mp4"/></video></p>
-<p></p><h2>韓國國旗程式</h2>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+<p></p>
+<h2>韓國國旗程式</h2>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">// https://en.wikipedia.org/wiki/Flag_of_South_Korea
+// https://en.wikipedia.org/wiki/Flag_of_South_Korea#/media/File:Flag_of_South_Korea_(construction_sheet).svg
+#include &lt;stdio.h&gt;
 #include &lt;gd.h&gt;
 #include &lt;math.h&gt;
 
-#define WIDTH 900
-#define HEIGHT 600
-#define FILENAME "south_korea_flag.png"
+// 函式原型
+void draw_korean_flag(gdImagePtr img);
+
+// 宣告旋轉函式
+void rotatePoints(int x_orig, int y_orig, double rotation_ang, gdPoint *points, int num_points) {
+    int i;
+    double angle_rad = rotation_ang * M_PI / 180.0;
+
+    for (i = 0; i &lt; num_points; i++) {
+        int x = points[i].x - x_orig;
+        int y = points[i].y - y_orig;
+
+        points[i].x = x_orig + (int)(x * cos(angle_rad) - y * sin(angle_rad));
+        points[i].y = y_orig + (int)(x * sin(angle_rad) + y * cos(angle_rad));
+    }
+}
 
 int main() {
-gdImagePtr im;
-FILE *pngout;
-int white, black, red, blue;
+    // 寬度 3: 高度 2
+    int width = 1200;
 
-im = gdImageCreate(WIDTH, HEIGHT);
+    int height = (int)(width * 2.0 / 3.0);
 
-white = gdImageColorAllocate(im, 255, 255, 255);
-black = gdImageColorAllocate(im, 0, 0, 0);
-red = gdImageColorAllocate(im, 205, 0, 0);
-blue = gdImageColorAllocate(im, 0, 56, 168);
+    gdImagePtr img = gdImageCreateTrueColor(width, height);
+    gdImageAlphaBlending(img, 0);
 
-// Background (white)
-gdImageFilledRectangle(im, 0, 0, WIDTH, HEIGHT , white);
+    draw_korean_flag(img);
 
-// Blue Circle (Yin-Yang Symbol)
-gdImageFilledArc(im, WIDTH / 2, HEIGHT / 2, WIDTH / 3, HEIGHT / 2, 210, 30, red, gdArc);
+    FILE *outputFile = fopen("./../images/korea_flag_2.png", "wb");
+    if (outputFile == NULL) {
+        fprintf(stderr, "錯誤：無法打開輸出檔案。\n");
+        return 1;
+    }
+    gdImagePngEx(img, outputFile, 9);
+    fclose(outputFile);
+    gdImageDestroy(img);
+    return 0;
+}
 
-// Red Circle (Yin-Yang Symbol)
-gdImageFilledArc(im, WIDTH / 2, HEIGHT / 2, WIDTH / 3, HEIGHT / 2, 30, 210, blue, gdArc);
+void draw_korean_flag(gdImagePtr img) {
+    int width = gdImageSX(img);
+    int height = gdImageSY(img);
+    int red, blue, black, grey, white;
+    // 根據 https://en.wikipedia.org/wiki/Flag_of_South_Korea#/media/File:Flag_of_South_Korea_(construction_sheet).svg
+    double scale = width / 72;
+    int big_circle_dia = (int)24 * scale;
+    int small_circle_dia = (int)big_circle_dia / 2;
+    // 左小圓的旋轉角度為 rot_ang
+    double rot_ang = atan2(48.0, 72.0);
+    // 長方形的旋轉角度為 rot_ang2;
+    double rot_ang2 = atan2(72.0, 48.0);
+    double degree = M_PI / 180.0;
+    int center_x = (int)(width / 2);
+    int center_y = (int)(height / 2);
+    gdPoint points[4];
+    // 上方長方形
+    int rect_lower_left_x = center_x - (int)6 * scale;
+    int rect_lower_right_x = center_x + (int)6 * scale;
+    int rect_upper_left_x = rect_lower_left_x;
+    int rect_upper_right_x = rect_lower_right_x;
+    int rect_lower_left_y = center_y - (int)18 * scale;
+    int rect_lower_right_y = rect_lower_left_y;
+    int rect_upper_left_y = rect_lower_left_y - (int)8 * scale;
+    int rect_upper_right_y = rect_upper_left_y;
+    // 取得點的座標
+    points[0].x = rect_lower_left_x;
+    points[0].y = rect_lower_left_y;
+    points[1].x = rect_upper_left_x;
+    points[1].y = rect_upper_left_y;
+    points[2].x = rect_upper_right_x;
+    points[2].y = rect_upper_right_y;
+    points[3].x = rect_lower_right_x;
+    points[3].y = rect_lower_right_y;
 
-int circleX = 385; // 圓心的 X 座標
-int circleY = 262.5; // 圓心的 Y 座標
-int circleRadius = 75;
+    printf("small_circle_dia is %d\n", small_circle_dia);
+    int left_center_x = center_x - (small_circle_dia / 2) * cos(rot_ang);
+    printf("center_x is %d\n", center_x);
+    printf("atan2(48.0, 72.0) is %f\n", atan2(48.0, 72.0));
+    printf("left_center_x is %d\n", left_center_x);
+    int left_center_y = center_y - (small_circle_dia / 2) * sin(rot_ang);
+    int right_center_x = center_x + (small_circle_dia / 2) * cos(rot_ang);
+    int right_center_y = center_y + (small_circle_dia / 2) * sin(rot_ang);
 
-// 繪製圓形
-gdImageFilledEllipse(im, circleX, circleY, circleRadius * 2, circleRadius * 2, red);
+    red = gdImageColorAllocate(img, 255, 0, 0);      // 紅色
+    blue = gdImageColorAllocate(img, 0, 0, 255);     // 藍色
+    black = gdImageColorAllocate(img, 0, 0, 0);      // 黑色
+    grey = gdImageColorAllocate(img, 125, 125, 125); // 灰色
+    white = gdImageColorAllocate(img, 255, 255, 255); // 白色
 
-int circleX2 = 515; // 圓心的 X 座標
+    gdImageFilledRectangle(img, 0, 0, width, height, white);
+    gdImageRectangle(img, 0, 0, width, height, black);
+    
+    // 長方形旋轉到右上方
+    rotatePoints(center_x, center_y, rot_ang2 / degree, points, 4);
+    gdImageFilledPolygon(img, points, 4, black);
+    // 長方形旋轉到左上方
+    rotatePoints(center_x, center_y, -2 * rot_ang2 / degree, points, 4);
+    gdImageFilledPolygon(img, points, 4, black);
+    // 長方形旋轉到下右方
+    rotatePoints(center_x, center_y, -2 * rot_ang / degree, points, 4);
+    gdImageFilledPolygon(img, points, 4, black);
+    // 長方形旋轉到下左方
+    rotatePoints(center_x, center_y, -2 * rot_ang2 / degree, points, 4);
+    gdImageFilledPolygon(img, points, 4, black);
 
-int circleY2 = 337.5;
+    // 繪製大圓形的輪廓
+    int circle_radius = (int)(height * 2.0 / 5.0);
+    gdImageEllipse(img, center_x, center_y, big_circle_dia, big_circle_dia, black);
+    // 左小圓
+    gdImageEllipse(img, left_center_x, left_center_y, small_circle_dia, small_circle_dia, red);
+    // 右小圓
+  gdImageEllipse(img, right_center_x, right_center_y, small_circle_dia, small_circle_dia, blue);
+gdImageFill(img, left_center_x, left_center_y, red); // 用紅色填充左小圓
+gdImageFill(img, right_center_x, right_center_y - small_circle_dia / 2 - 10, red);
+gdImageFill(img, right_center_x, right_center_y, blue); // 用藍色填充右小圓
+gdImageFill(img, left_center_x, left_center_y + small_circle_dia / 2 + 10, blue);
 
-// 繪製圓形
-gdImageFilledEllipse(im, circleX2, circleY2, circleRadius * 2, circleRadius * 2, blue);
+gdImageEllipse(img, center_x, center_y, big_circle_dia, big_circle_dia, white);
 
 {
+    int lineWidth = 19;  // 線的寬度
 
-
-// 起點和終點位置
-
-int startX = 340;
-// 線的起點 X 座標
-
-int startY = 90;
-// 線的起點 Y 座標
-
-int endX = 200;
-// 線的終點 X 座標
-
-int endY = 260;
-// 線的終點 Y 座標
-
-int lineWidth = 23; // 線的寬度
-
-// 繪製線段
-gdImageSetThickness(im, lineWidth);
-gdImageLine(im, startX, startY, endX, endY, black);
-// 繪製線段
-gdImageSetThickness(im, lineWidth);
-gdImageLine(im, startX -35, startY -10, endX -35, endY -10, black);
-
-// 繪製線段
-gdImageSetThickness(im, lineWidth);
-gdImageLine(im, startX -70, startY -20, endX -70, endY -20, black);
-
-int startX2 = 213;
-// 線的起點 X 座標
-
-int startY2 = 270;
-// 線的起點 Y 座標
-
-int endX2 = 133;
-// 線的終點 X 座標
-
-int endY2 = 210;
-// 線的終點 Y 座標
-
-int lineWidth2 = 25; // 線的寬度
-
-// 繪製線段
-gdImageSetThickness(im, lineWidth);
-gdImageLine(im, startX2 +3, startY2, endX2 +3, endY2, white);
-
-gdImageSetThickness(im, lineWidth +10);
-gdImageLine(im, startX2 -17, startY2 +9 , endX2 -17, endY2 +9 , white);
-
-gdImageSetThickness(im, lineWidth );
-gdImageLine(im, startX2 +115, startY2 -145, endX2 +115, endY2 -145, white);
-
-gdImageSetThickness(im, lineWidth);
-gdImageLine(im, startX2 +120, startY2 -155, endX2 +120, endY2 -155, white);
-
-gdImageSetThickness(im, lineWidth +12);
-gdImageLine(im, startX2 +145, startY2 -155, endX2 +145, endY2 -155, white);
+    // 繪製線段
+    gdImageSetThickness(img, lineWidth);
+    gdImageLine(img, 423, 80, 263, 320, white);
+    gdImageLine(img, 363, 80, 203, 320, white);
+    gdImageLine(img, 777, 80, 937, 320, white);
+    gdImageLine(img, 837, 80, 997, 320, white);
+    gdImageLine(img, 960, 160, 825, 250, white);
+    gdImageLine(img, 997, 480, 837, 720, white);
+    gdImageLine(img, 937, 480, 777, 720, white);
+    gdImageLine(img, 825, 550, 960, 640, white);
+    gdImageLine(img, 263, 480, 423, 720, white);
+    gdImageLine(img, 203, 480, 363, 720, white);
+    gdImageLine(img, 285, 610, 327, 582, white);
 }
 {
-// 起點和終點位置
-
-int startX = 330;
-// 線的起點 X 座標
-
-int startY = 520;
-// 線的起點 Y 座標
-
-int endX = 190;
-// 線的終點 X 座標
-
-int endY = 350;
-// 線的終點 Y 座標
-
-int lineWidth = 23; // 線的寬度
-
-// 繪製線段
-gdImageSetThickness(im, lineWidth);
-gdImageLine(im, startX, startY, endX, endY, black);
-// 繪製線段
-gdImageSetThickness(im, lineWidth);
-gdImageLine(im, startX -35, startY +10, endX -35, endY +10, black);
-
-// 繪製線段
-gdImageSetThickness(im, lineWidth);
-gdImageLine(im, startX -70, startY +20, endX -70, endY +20, black);
-
-int startX2 = 213;
-// 線的起點 X 座標
-
-int startY2 = 330;
-// 線的起點 Y 座標
-
-int endX2 = 133;
-// 線的終點 X 座標
-
-int endY2 = 390;
-// 線的終點 Y 座標
-
-int lineWidth2 = 25; // 線的寬度
-
-// 繪製線段
-gdImageSetThickness(im, lineWidth +8);
-gdImageLine(im, startX2 -11, startY2, endX2 -11, endY2, white);
-
-gdImageSetThickness(im, lineWidth +10);
-gdImageLine(im, startX2 -30, startY2 -9 , endX2 -30, endY2 -9 , white);
-
-gdImageSetThickness(im, lineWidth );
-gdImageLine(im, startX2 +100, startY2 +150, endX2 +100, endY2 +150, white);
-
-gdImageSetThickness(im, lineWidth);
-gdImageLine(im, startX2 +120, startY2 +155, endX2 +120, endY2 +155, white);
-
-gdImageSetThickness(im, lineWidth +14);
-gdImageLine(im, startX2 +145, startY2 +157, endX2 +145, endY2 +157, white);
-
-gdImageSetThickness(im, lineWidth -10);
-gdImageLine(im, 232, 426, 206, 448, white);
-
+    int lineWidth = 31;
+    gdImageSetThickness(img, lineWidth);
+    gdImageLine(img, 852, 150, 920, 250, black);
 }
-
-{
-// 起點和終點位置
-
-int startX = 564;
-// 線的起點 X 座標
-
-int startY = 520;
-// 線的起點 Y 座標
-
-int endX = 704;
-// 線的終點 X 座標
-
-int endY = 350;
-// 線的終點 Y 座標
-
-int lineWidth = 23; // 線的寬度
-
-// 繪製線段
-gdImageSetThickness(im, lineWidth);
-gdImageLine(im, startX +70, startY +20, endX +70, endY +20, black);
-
-// 繪製線段
-gdImageSetThickness(im, lineWidth);
-gdImageLine(im, startX, startY, endX, endY, black);
-
-// 繪製線段
-gdImageSetThickness(im, lineWidth);
-gdImageLine(im, startX +35, startY +10, endX +35, endY +10, black);
-
-gdImageSetThickness(im, lineWidth -10);
-gdImageLine(im, 624, 400, 734, 490, white);
-
-int startX2 = 553;
-// 線的起點 X 座標
-
-int startY2 = 330;
-// 線的起點 Y 座標
-
-int endX2 = 633;
-// 線的終點 X 座標
-
-int endY2 = 390;
-// 線的終點 Y 座標
-
-int lineWidth2 = 25; // 線的寬度
-
-// 繪製線段
-gdImageSetThickness(im, lineWidth +8);
-gdImageLine(im, startX2 +139, startY2, endX2 +139, endY2, white);
-
-gdImageSetThickness(im, lineWidth +10);
-gdImageLine(im, startX2 +157, startY2 -9 , endX2 +157, endY2 -9 , white);
-
-gdImageSetThickness(im, lineWidth);
-gdImageLine(im, startX2 +25, startY2 +155, endX2 +25, endY2 +155, white);
-
-gdImageSetThickness(im, lineWidth +30);
-gdImageLine(im, startX2 -3, startY2 +170, endX2 , endY2 +170, white);
-}
-{
-// 起點和終點位置
-
-int startX = 330;
-// 線的起點 X 座標
-
-int startY = 520;
-// 線的起點 Y 座標
-
-int endX = 190;
-// 線的終點 X 座標
-
-int endY = 350;
-// 線的終點 Y 座標
-
-int lineWidth = 23; // 線的寬度
-
-// 繪製線段
-gdImageSetThickness(im, lineWidth);
-gdImageLine(im, startX, startY, endX, endY, black);
-// 繪製線段
-gdImageSetThickness(im, lineWidth);
-gdImageLine(im, startX -35, startY +10, endX -35, endY +10, black);
-
-// 繪製線段
-gdImageSetThickness(im, lineWidth);
-gdImageLine(im, startX -70, startY +20, endX -70, endY +20, black);
-
-int startX2 = 213;
-// 線的起點 X 座標
-
-int startY2 = 330;
-// 線的起點 Y 座標
-
-int endX2 = 133;
-// 線的終點 X 座標
-
-int endY2 = 390;
-// 線的終點 Y 座標
-
-int lineWidth2 = 25; // 線的寬度
-
-// 繪製線段
-gdImageSetThickness(im, lineWidth +8);
-gdImageLine(im, startX2 -11, startY2, endX2 -11, endY2, white);
-
-gdImageSetThickness(im, lineWidth +10);
-gdImageLine(im, startX2 -30, startY2 -9 , endX2 -30, endY2 -9 , white);
-
-gdImageSetThickness(im, lineWidth );
-gdImageLine(im, startX2 +100, startY2 +150, endX2 +100, endY2 +150, white);
-
-gdImageSetThickness(im, lineWidth);
-gdImageLine(im, startX2 +120, startY2 +155, endX2 +120, endY2 +155, white);
-
-gdImageSetThickness(im, lineWidth +14);
-gdImageLine(im, startX2 +145, startY2 +157, endX2 +145, endY2 +157, white);
-
-gdImageSetThickness(im, lineWidth -10);
-gdImageLine(im, 232, 426, 206, 448, white);
-
-}
-{
-// 起點和終點位置
-
-int startX = 564;
-// 線的起點 X 座標
-
-int startY = 97;
-// 線的起點 Y 座標
-
-int endX = 704;
-// 線的終點 X 座標
-
-int endY = 267;
-// 線的終點 Y 座標
-
-int lineWidth = 23; // 線的寬度
-
-// 繪製線段
-gdImageSetThickness(im, lineWidth);
-gdImageLine(im, startX +70, startY -20, endX +70, endY -20, black);
-
-// 繪製線段
-gdImageSetThickness(im, lineWidth);
-gdImageLine(im, startX, startY, endX, endY, black);
-
-gdImageSetThickness(im, lineWidth -10);
-gdImageLine(im, 624, 212, 734, 118, white);
-
-// 繪製線段
-gdImageSetThickness(im, lineWidth);
-gdImageLine(im, startX +35, startY -10, endX +35, endY -10, black);
-
-int startX2 = 553;
-// 線的起點 X 座標
-
-int startY2 = 277;
-// 線的起點 Y 座標
-
-int endX2 = 633;
-// 線的終點 X 座標
-
-int endY2 = 217;
-// 線的終點 Y 座標
-
-int lineWidth2 = 25; // 線的寬度
-
-// 繪製線段
-gdImageSetThickness(im, lineWidth +8);
-gdImageLine(im, startX2 +134, startY2, endX2 +134, endY2, white);
-
-gdImageSetThickness(im, lineWidth +10);
-gdImageLine(im, startX2 +157, startY2 +9 , endX2 +157, endY2 +9 , white);
-
-gdImageSetThickness(im, lineWidth);
-gdImageLine(im, startX2 +25, startY2 -155, endX2 +25, endY2 -155, white);
-
-gdImageSetThickness(im, lineWidth +30);
-gdImageLine(im, startX2 -5, startY2 -155, endX2 -5, endY2 -155, white);
-
-}
-
-// Save image
-FILE *outputFile = fopen("./../images/korea_flag.png", "wb");
-if (outputFile == NULL) {
-fprintf(stderr, "Error opening the output file.\n");
-return 1;
-}
-gdImagePngEx(im, outputFile, 9);
-fclose(outputFile);
-gdImageDestroy(im);
-return 0;
 }</pre>
 <p><br/><img alt="" height="267" src="/images/korea_flag.png" width="400"/></p>
-<p><img alt="" src="/images/洗白啊.mp4" width="400"/><video controls="controls" height="630" width="1008">
-<source src="/images/洗白啊.mp4" type="video/mp4"/></video></p><h1>C_EX</h1>
+<p><video controls="controls" height="630" width="1008">
+<source src="/images/韓國國旗.mp4" type="video/mp4"/></video></p>
+<p></p>
+<p><img alt="" src="/images/洗白啊.mp4" width="400"/></p>
+<h1>C_EX</h1>
 <h2>Exercises</h2>
 <p>1. <span>使用 </span><code>printf</code><span> 函数输出了 </span><code>a</code><span>、</span><code>b</code><span> 和 </span><code>c</code><span> 的值到屏幕，其中格式化字符串指定了输出的格式。</span></p>
 <p></p>
@@ -1342,7 +1140,8 @@ printf("这个数字大于等于16\n ");
 
 return 0;
 }</pre>
-<p><br/><img caption="false" height="330" src="/images/螢幕擷取畫面 2023-12-21 043725.png" width="500"/></p><h1>W12</h1>
+<p><br/><img caption="false" height="330" src="/images/螢幕擷取畫面 2023-12-21 043725.png" width="500"/></p>
+<h1>W12</h1>
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 #include &lt;gd.h&gt;
 #include &lt;math.h&gt;
@@ -1408,7 +1207,8 @@ return 1;
 <p><img alt="" height="400" src="/images/hellogd.png" width="533"/></p>
 <p></p>
 <p><video controls="controls" height="630" width="1008">
-<source src="/images/多邊形影片.mp4" type="video/mp4"/></video></p><h1>W13</h1>
+<source src="/images/多邊形影片.mp4" type="video/mp4"/></video></p>
+<h1>W13</h1>
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">// 包含標準輸出入程式庫的標頭文件
 #include &lt;stdio.h&gt;
  
@@ -1464,7 +1264,8 @@ int main() {
 }</pre>
 <p><img alt="" height="200" src="/images/motion_plot.png" width="400"/></p>
 <p><video controls="controls" height="630" width="1008">
-<source src="/images/彈簧影片.mp4" type="video/mp4"/></video></p><h1>ANSIC</h1>
+<source src="/images/彈簧影片.mp4" type="video/mp4"/></video></p>
+<h1>ANSIC</h1>
 <h2>練習一</h2>
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 
@@ -1705,7 +1506,7 @@ return 0; // 表示程序成功执行
 <p><br/><img alt="" height="80" src="/images/螢幕擷取畫面 2023-12-21 033530.png" width="200"/></p>
 <h2>上課內容</h2>
 <p>1.</p>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt; // Include standard input/output library
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt; // Include standard input/output library
 
 int test(int x, int y); // Declare the function 'test' with two integer parameters
 
@@ -1725,10 +1526,11 @@ int test(int x, int y)
 {
     // Conditional expression: If x is equal to y, return (x + y) multiplied by 3, otherwise return x + y
     return x == y ? (x + y) * 3 : x + y;
-}</pre>
+}
+</pre>
 <p><img alt="" height="140" src="/images/a-1.c.png" width="250"/></p>
 <p>2.</p>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt; // Include standard input/output library
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt; // Include standard input/output library
 
 int test(int n); // Declare the function 'test' with an integer parameter
 
@@ -1761,10 +1563,11 @@ int test(int n)
     }
 
     return x - n; // Return the result of the expression x minus n
-}</pre>
+}
+</pre>
 <p><img alt="" height="140" src="/images/a-2.c.png" width="250"/></p>
 <p>3.</p>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt; // Include standard input/output library
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt; // Include standard input/output library
 
 int test(int x, int y); // Declare the function 'test' with two integer parameters
 
@@ -1794,25 +1597,42 @@ int test(int x, int y)
     // 2. y is equal to 30
     // 3. the sum of x and y is equal to 30
     return x == 30 || y == 30 || (x + y == 30);
-}</pre>
+}
+</pre>
 <p><img alt="" height="160" src="/images/a-3.c.png" width="250"/></p>
 <p>4.</p>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
-int main() {
-    double s=0, j=1, d, i;
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt; // Include standard input/output library
 
-    // Loop to calculate the series
-    for(i=1; i&lt;=7; i+=2){
-        d = (i/j);
-        s += d;
-        j = j*2;
-    }
+int test(int x, int y); // Declare the function 'test' with two integer parameters
 
-    // Print the result
-    printf("Value of series: %.2lf\n", s);
+int main(void)
+{
+    // Call the function 'test' with arguments 25 and 5, and print the result
+    printf("%d", test(25, 5));
 
-    return 0;
-}</pre>
+    // Print a newline for formatting
+    printf("\n");
+
+    // Call the function 'test' with arguments 20 and 30, and print the result
+    printf("%d", test(20, 30));
+
+    // Print a newline for formatting
+    printf("\n");
+
+    // Call the function 'test' with arguments 20 and 25, and print the result
+    printf("%d", test(20, 25));
+}
+
+// Function definition for 'test'
+int test(int x, int y)
+{
+    // Return 1 (true) if any of the following conditions are true:
+    // 1. x is equal to 30
+    // 2. y is equal to 30
+    // 3. the sum of x and y is equal to 30
+    return x == 30 || y == 30 || (x + y == 30);
+}
+</pre>
 <p><img alt="" height="149" src="/images/a-4.c.png" width="250"/></p>
 <p>5.</p>
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;  // Include standard input/output library
@@ -1847,10 +1667,11 @@ int test(int x)
     if (abs(x - 100) &lt;= 10 || abs(x - 200) &lt;= 10)
         return 1;
     return 0;
-}</pre>
+}
+</pre>
 <p><img alt="" height="162" src="/images/a-5.c.png" width="250"/></p>
 <p>6.</p>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;  // Include standard input/output library
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;  // Include standard input/output library
 #include &lt;stdlib.h&gt; // Include standard library for modulo operation
 
 int test(int n); // Declare the function 'test' with an integer parameter
@@ -1885,10 +1706,11 @@ int test(int n)
     // Check if 'n' is divisible by 3 or if 'n' is divisible by 7.
     // Return 1 (true) if either condition is true, otherwise return 0 (false).
     return n % 3 == 0 || n % 7 == 0;
-}</pre>
+}
+</pre>
 <p><img alt="" height="199" src="/images/a-6.c.png" width="250"/></p>
 <p>7.</p>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;  // Include standard input/output library
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;  // Include standard input/output library
 #include &lt;stdlib.h&gt; // Include standard library for absolute value function
 
 int test(int temp1, int temp2); // Declare the function 'test' with two integer parameters
@@ -1919,10 +1741,11 @@ int test(int temp1, int temp2)
     // 2. temp2 is less than 0 and temp1 is greater than 100
     // Return 1 (true) if either condition is true, otherwise return 0 (false).
     return temp1 &lt; 0 &amp;&amp; temp2 &gt; 100 || temp2 &lt; 0 &amp;&amp; temp1 &gt; 100;
-}</pre>
+}
+</pre>
 <p><img alt="" height="154" src="/images/a-7.c.png" width="250"/></p>
 <p>8.</p>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;  // Include standard input/output library
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;  // Include standard input/output library
 #include &lt;stdlib.h&gt; // Include standard library for absolute value function
 
 int test(int x, int y); // Declare the function 'test' with two integer parameters
@@ -1953,7 +1776,8 @@ int test(int x, int y)
     // 2. y is between 100 and 200 (inclusive)
     // Return 1 (true) if either condition is true, otherwise return 0 (false).
     return (x &gt;= 100 &amp;&amp; x &lt;= 200) || (y &gt;= 100 &amp;&amp; y &lt;= 200);
-}</pre>
+}
+</pre>
 <p><img alt="" height="163" src="/images/a-8.c.png" width="250"/></p>
 <p>9.</p>
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;  // Include standard input/output library
@@ -1993,20 +1817,53 @@ int test(int x, int y, int z)
     // 1. The variable is between 20 and 50 (inclusive)
     // Return 1 (true) if any condition is true, otherwise return 0 (false).
     return (x &gt;= 20 &amp;&amp; x &lt;= 50) || (y &gt;= 20 &amp;&amp; y &lt;= 50) || (z &gt;= 20 &amp;&amp; z &lt;= 50);
-}</pre>
+}
+</pre>
 <p><img alt="" height="190" src="/images/a-9.c.png" width="250"/></p>
 <p>10.</p>
-<p>#include &lt;stdio.h&gt; // Include standard input/output library<br/>#include &lt;stdlib.h&gt; // Include standard library for additional functions</p>
-<p>// Declare the function 'test' with two integer parameters<br/>int test(int x, int y);</p>
-<p>int main(void)<br/>{<br/> // Call the function 'test' with arguments 20 and 84, and print the result<br/> printf("%d", test(20, 84));</p>
-<p>// Print a newline for formatting<br/> printf("\n");</p>
-<p>// Call the function 'test' with arguments 14 and 50, and print the result<br/> printf("%d", test(14, 50));</p>
-<p>// Print a newline for formatting<br/> printf("\n");</p>
-<p>// Call the function 'test' with arguments 11 and 45, and print the result<br/> printf("%d", test(11, 45));</p>
-<p>// Print a newline for formatting<br/> printf("\n");</p>
-<p>// Call the function 'test' with arguments 25 and 40, and print the result<br/> printf("%d", test(25, 40));<br/>}</p>
-<p>// Function definition for 'test'<br/>int test(int x, int y)<br/>{<br/> // Check if either of the following conditions are true:<br/> // 1. x is less than or equal to 20 OR y is greater than or equal to 50<br/> // 2. x is less than or equal to 20 OR y is greater than or equal to 50<br/> // If any of the conditions are true, return 1 (true). Otherwise, return 0 (false).<br/> return (x &lt;= 20 || y &gt;= 50) || (x &lt;= 20 || y &gt;= 50);<br/>}</p>
-<p><img alt="" height="196" src="/images/a-10.c.png" width="250"/></p><h1>W15</h1>
+<p></p>
+<p></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt; // Include standard input/output library
+#include &lt;stdlib.h&gt; // Include standard library for additional functions
+
+// Declare the function 'test' with two integer parameters
+int test(int x, int y);
+
+int main(void)
+{
+// Call the function 'test' with arguments 20 and 84, and print the result
+printf("%d", test(20, 84));
+
+// Print a newline for formatting
+printf("\n");
+
+// Call the function 'test' with arguments 14 and 50, and print the result
+printf("%d", test(14, 50));
+
+// Print a newline for formatting
+printf("\n");
+
+// Call the function 'test' with arguments 11 and 45, and print the result
+printf("%d", test(11, 45));
+
+// Print a newline for formatting
+printf("\n");
+
+// Call the function 'test' with arguments 25 and 40, and print the result
+printf("%d", test(25, 40));
+}
+
+// Function definition for 'test'
+int test(int x, int y)
+{
+// Check if either of the following conditions are true:
+// 1. x is less than or equal to 20 OR y is greater than or equal to 50
+// 2. x is less than or equal to 20 OR y is greater than or equal to 50
+// If any of the conditions are true, return 1 (true). Otherwise, return 0 (false).
+return (x &lt;= 20 || y &gt;= 50) || (x &lt;= 20 || y &gt;= 50);
+}</pre>
+<p><br/><img alt="" height="196" src="/images/a-10.c.png" width="250"/></p>
+<h1>W15</h1>
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
 #include &lt;gd.h&gt;
 #include &lt;math.h&gt;
@@ -2550,8 +2407,22 @@ int main() {
 <p><strong><span><img alt="" height="421" src="/images/10.7.PNG" width="800"/></span></strong></p>
 <p><strong><span>(8)推上網站</span></strong></p>
 <p><strong><span><img alt="" height="416" src="/images/10.8.PNG" width="800"/></span></strong></p>
-<p><strong><span></span></strong></p>
-<p><strong><span></span></strong></p>
+<p><br/><br/></p>
+<h1>期末總結</h1>
+<p><span>41223228  </span><span>(ABCDEFGH) 80分</span></p>
+<p><span><span><span>A:<span> </span><span>按照進度明確標示倉儲的改版歷程</span></span></span></span></p>
+<p><span>B: 根據 IPv4 與 IPv6 網路環境設定進行作法討論</span></p>
+<p>    方法1.從設定中的乙太網路去做更改，開啟IPv6在慣用的DNS中輸入網路位置。</p>
+<p>    方法2.在課堂中就已完成的網路設定存於USB中，待下次使用時直接開啟即可。</p>
+<p><span>C: 是就<span><span> </span>Replit、s.cycu.org 與 localhost</span><span> </span>情境下對個人與分組倉儲進行設定操作</span></p>
+<p><span><span><span>D：完成課程內容中的<a href="/get_page/%E4%B8%8A%E8%AA%B2%E5%85%A7%E5%AE%B9">練習</a></span></span><span><span>。</span></span></span><span></span></p>
+<p><span><span>E：完成</span></span><span> </span><span><span>w2-w5</span></span><span> </span><span><span>週任務中的<a href="/get_page/Exercises">練習</a></span></span><span><span>。</span></span></p>
+<p><span><span>F：完成</span></span><span> </span><span><span>w6-w7</span></span><span> </span><span><span>週任務中的<a href="/get_page/%E7%B7%B4%E7%BF%92%E4%B8%80">練習一</a></span></span><span><span>和<a href="/get_page/%E7%B7%B4%E7%BF%92%E4%BA%8C">練習二</a></span></span><span><span>。</span></span></p>
+<p><span><span>G：完成C結合gd繪圖程式庫，畫出<a href="/get_page/%E4%B8%AD%E8%8F%AF%E6%B0%91%E5%9C%8B%E5%9C%8B%E6%97%97%E7%A8%8B%E5%BC%8F">PROC</a></span><span>（</span><a href="https://en.wikipedia.org/wiki/Flag_of_China#/media/File:Flag_of_China_(construction_sheet).svg"><span>規格</span></a><span>），<a href="/get_page/%E8%8B%B1%E5%9C%8B%E5%9C%8B%E6%97%97%E7%A8%8B%E5%BC%8F">英國</a></span><span>（</span><a href="https://en.wikipedia.org/wiki/Flag_of_the_United_Kingdom#/media/File:Flag_of_the_United_Kingdom_(1-2)_(construction_sheet).svg"><span>規格</span></a><span>），<a href="/get_page/%E6%97%A5%E6%9C%AC%E5%9C%8B%E6%97%97%E7%A8%8B%E5%BC%8F">日本</a></span><span>（</span><a href="https://en.wikipedia.org/wiki/Flag_of_Japan#/media/File:Construction_sheet_of_the_Japanese_flag_EN.svg"><span>規格</span></a><span>）和<a href="/get_page/%E9%9F%93%E5%9C%8B%E5%9C%8B%E6%97%97%E7%A8%8B%E5%BC%8F">韓國</a></span><span>（</span><a href="https://en.wikipedia.org/wiki/Flag_of_South_Korea#/media/File:Flag_of_South_Korea_(construction_sheet).svg"><span>規格</span></a><span>）標誌。<a href="/get_page/W6">【W6】</a><a href="/get_page/W7">【W7】</a><a href="/get_page/W6"></a></span></span><span> </span><a href="https://en.wikipedia.org/wiki/Flag_of_Japan"><span></span></a><span></span><a href="https://en.wikipedia.org/wiki/Flag_of_Japan#/media/File:Construction_sheet_of_the_Japanese_flag_EN.svg"><span></span></a><span></span><span> </span><a href="https://en.wikipedia.org/wiki/Flag_of_South_Korea"><span></span></a><span></span><a href="https://en.wikipedia.org/wiki/Flag_of_South_Korea#/media/File:Flag_of_South_Korea_(construction_sheet).svg"><span></span></a><span></span><a href="https://cp2023.41223201.repl.co/get_page/w6"><span></span></a><a href="https://cp2023.41223201.repl.co/get_page/w7"><span></span></a></p>
+<p><span><span>H：完成<a href="/get_page/W16">W16最終專案</a></span></span><span><span>。</span></span></p>
+<p><a href="/get_page/%E6%95%99%E5%AD%B8%E5%BD%B1%E7%89%87">【教學影片】</a></p>
+<p></p>
+<h2>心得</h2>
 <p><strong><span></span></strong></p>
 <p><strong><span></span></strong></p>
 <p><strong><span></span></strong></p>
